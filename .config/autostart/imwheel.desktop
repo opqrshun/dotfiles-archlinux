@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=imwheel
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[ja_JP]=imwheel
+Name=imwheel
+Comment[ja_JP]=マウスホイール
+Comment=マウスホイール

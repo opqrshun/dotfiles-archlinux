@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/ibus-daemon -d
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[ja_JP]=ibus
+Name=ibus
+Comment[ja_JP]=
+Comment=
+X-MATE-Autostart-Delay=0
