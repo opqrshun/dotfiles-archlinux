@@ -66,7 +66,7 @@ gui_install:
 	sudo pacman -S tilix copyq imwheel
 
 yay:
- yay -Syu ibus-mozc mozc otf-ipaexfont ttf-migu ttf-ricty \
+	yay -Syu ibus-mozc mozc otf-ipaexfont ttf-migu ttf-ricty \
 	 visual-studio-code-bin chrome-gnome-shell-git \
 	 dropbox nautilus-dropbox github-desktop slack-desktop nkf postman\
 	 rednotebook zoom openprinting-ppds-postscript-ricoh \
@@ -84,8 +84,8 @@ firewalld: # battery省電力設定
 
 # TODO configファイル
 cups:
-  sudo pacman -S cups cups-pdf system-config-printer --noconfirm
-  sudo systemctl enable org.cups.cupsd.service docker
+	sudo pacman -S cups cups-pdf system-config-printer --noconfirm
+	sudo systemctl enable org.cups.cupsd.service docker
 	sudo systemctl start org.cups.cupsd.service docker
 
 # powertopも入れる？
@@ -96,7 +96,7 @@ tlp: # battery省電力設定
 	sudo systemctl enable tlp-sleep.service
 
 docker:
-  sudo pacman -S docker docker-compose --noconfirm
+	sudo pacman -S docker docker-compose --noconfirm
 	sudo systemctl enable docker
 	sudo systemctl start docker
 
@@ -106,7 +106,7 @@ podman:
 	sudo systemctl start io.podman.service
 
 usbguard:
-  sudo pacman -S usbguard usbguard-qt
+	sudo pacman -S usbguard usbguard-qt
 	sudo systemctl enable usbguard
 	sudo systemctl start usbguard
 	# sudo usbguard-applet-qt でusbチェック
@@ -149,7 +149,7 @@ security: #apparmor audit
 	# write-cache
 
 vagrant:
-  sudo pacman -S vagrant virtualbox-host-modules-arch virtualbox-guest-iso
+	sudo pacman -S vagrant virtualbox-host-modules-arch virtualbox-guest-iso
 	yay -S virtualbox-ext-oracle
 	vagrant plugin install vagrant-vbguest
 	vagrant plugin install vagrant-disksize
@@ -157,15 +157,15 @@ vagrant:
 	sudo  gpasswd -a ${USER} vboxusers
 	
 arch_virtualbox: ## nat
-   ip link set enp0s3 up
-	 systemctl enable dhcpcd.service
-	 systemctl start dhcpcd.service
-	 systemctl enable systemd-networkd.service systemd-resolved.service
-	 systemctl start systemd-networkd.service systemd-resolved.service
+	ip link set enp0s3 up
+	systemctl enable dhcpcd.service
+	systemctl start dhcpcd.service
+	systemctl enable systemd-networkd.service systemd-resolved.service
+	systemctl start systemd-networkd.service systemd-resolved.service
 
 # ゲスト側
 vagrantguest:
-  sudo pacman -S virtualbox-guest-utils	
+	sudo pacman -S virtualbox-guest-utils	
 
 #zeal document browser
 checking:
@@ -176,36 +176,23 @@ node:
 	mkdir -p ${HOME}/.node_modules
 	yarn global add n
 
+npm:
+	npm install @openapitools/openapi-generator-cli -g
+
 # pythoninstall:
 # 	python -m venv ${HOME}/venv/pydev
 # 	source ${HOME}/venv/pydev/bin/activate
 
 pip:
-	pip install --upgrade pip
-	pip install pylint autopep8 autopep8
-	pip install mazer
-  pip install scrapy
-	pip install cython
-	pip install falcon
-  pip install schematics
-	pip install mecab-python3
-	pip install mysqlclient
-  pip install pandas
-  pip install gensim
-	pip install paramiko
-  pip install pymagnitude
-  pip install bs4
-  pip install gspread
-  pip install pydrive
-  pip install oauth2client
-  pip install google-api-python-client #spread sheet api用
-  pip install google-auth-httplib2
-  pip install google-auth-oauthlib
-	pip install python-docx
-	pip install docker	
+	${HOME}/venv/pydev/bin/pip install --user --upgrade pip
+	${HOME}/venv/pydev/bin/pip install -r requirements.txt
+	
 
 ansible_setup:
 	ansible-galaxy install nginxinc.nginx
+	ansible-galaxy install geerlingguy.apache                                                                               
+	ansible-galaxy install geerlingguy.mysql                                                                               
+	ansible-galaxy install geerlingguy.phpmyadmin                                                                               
 
 execansible:
 	ansible-playbook -i ansible/local ansible/site.yml --tags setup --ask-become-pass
@@ -216,7 +203,7 @@ allinstall:
 ######################################################
 
 ubuntu:
-  sudo apt update -y
+	sudo apt update -y
 	sudo apt full-upgrade -y
 	sudo apt -y python-setuptools
 	sudo apt -y selinux
@@ -248,54 +235,56 @@ ubuntu:
 	sudo localectl set-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja"
 	source /etc/default/locale
 
+	sudo apt install -y nodejs npm
+
 	# chrome は落としてくるか
 	#dpkg -i chrome_path
 
-fedora:
-	sudo dnf update
-	sudo dnf install -y ansible tilix tmux imwheel nkf copyq snapd vim neovim\
-	 python-setuptools python-devel cmake lsof htop filezilla pwgen vagrant\
-	 zsh ibus-mozc git-gui\
-	bzip2-devel gdbm-devel libffi-devel libuuid-devel ncurses-devel \
-	openssl-devel readline-devel sqlite-devel tk-devel wget xz-devel \
-	zlib-devel gcc gcc-c++ boost-devel gnome-tweaks\
-	nmap firewall-config\
-	composer
+# fedora:
+# 	sudo dnf update
+# 	sudo dnf install -y ansible tilix tmux imwheel nkf copyq snapd vim neovim\
+# 	 python-setuptools python-devel cmake lsof htop filezilla pwgen vagrant\
+# 	 zsh ibus-mozc git-gui\
+# 	bzip2-devel gdbm-devel libffi-devel libuuid-devel ncurses-devel \
+# 	openssl-devel readline-devel sqlite-devel tk-devel wget xz-devel \
+# 	zlib-devel gcc gcc-c++ boost-devel gnome-tweaks\
+# 	nmap firewall-config\
+# 	composer
 
-	#docker
-	sudo dnf -y remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-selinux \
-                  docker-engine-selinux \
-                  docker-engine
+# 	#docker
+# 	sudo dnf -y remove docker \
+#                   docker-client \
+#                   docker-client-latest \
+#                   docker-common \
+#                   docker-latest \
+#                   docker-latest-logrotate \
+#                   docker-logrotate \
+#                   docker-selinux \
+#                   docker-engine-selinux \
+#                   docker-engine
 
-	sudo dnf -y install dnf-plugins-core
-	sudo dnf config-manager \
-			--add-repo \
-			https://download.docker.com/linux/fedora/docker-ce.repo
+# 	sudo dnf -y install dnf-plugins-core
+# 	sudo dnf config-manager \
+# 			--add-repo \
+# 			https://download.docker.com/linux/fedora/docker-ce.repo
 			
-	sudo dnf install -y docker-ce docker-ce-cli containerd.io
+# 	sudo dnf install -y docker-ce docker-ce-cli containerd.io
 
-	# docer-compose common
-	curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$$(uname -s)-$$(uname -m)" \
-			-o /usr/local/bin/docker-compose
-	chmod +x /usr/local/bin/docker-compose
-	ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+# 	# docer-compose common
+# 	curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$$(uname -s)-$$(uname -m)" \
+# 			-o /usr/local/bin/docker-compose
+# 	chmod +x /usr/local/bin/docker-compose
+# 	ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-	# node
-	curl -sL https://rpm.nodesource.com/setup_12.x | bash -
-	sudo dnf install nodejs
+# 	# node
+# 	curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+# 	sudo dnf install nodejs
 
-	# code https://code.visualstudio.com/docs/setup/linux
-	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-  sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-	dnf check-update
-  sudo dnf install-y code
+# 	# code https://code.visualstudio.com/docs/setup/linux
+# 	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+#   sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+# 	dnf check-update
+#   sudo dnf install-y code
 
 
 

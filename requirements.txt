@@ -1,0 +1,24 @@
+pylint
+autopep8
+autopep8
+mazer
+scrapy
+cython
+falcon
+schematics
+# mecab-python3
+mysqlclient
+pandas
+gensim
+paramiko
+pymagnitude
+bs4
+gspread
+pydrive
+oauth2client
+google-api-python-client #spread sheet api用
+google-auth-httplib2
+google-auth-oauthlib
+python-docx
+xlrd
+docker

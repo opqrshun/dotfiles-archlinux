@@ -26,6 +26,10 @@ pkglist=(
   shd101wyy.markdown-preview-enhanced
   timonwong.shellcheck
   GrapeCity.gc-excelviewer
+  neilbrayfield.php-docblocker
+  joelday.docthis,
+  arjun.swagger-viewer
+
 )
 
 for i in ${pkglist[@]}; do
