@@ -64,7 +64,6 @@ arch_setup:
 
 	gui_install
 	base_install
-	yay
 	docker
 
 wsl_setup:
@@ -73,7 +72,6 @@ wsl_setup:
 
 	gui_install
 	base_install
-	yay
 	docker
 
 #zeal document browser 言語リファレンス
@@ -111,8 +109,7 @@ pip:
 	${HOME}/venv/pydev/bin/pip install --user --upgrade pip
 	${HOME}/venv/pydev/bin/pip install -r requirements.txt
 
-something:
-	cups tlp
+
 # TODO configファイル
 cups:
 	sudo pacman -Syu cups cups-pdf system-config-printer --noconfirm
@@ -137,9 +134,7 @@ podman:
 	sudo systemctl start io.podman.service
 
 
-##################
-security_setup:
-	firewalld antivirus usbguard security 
+################## 
 
 usbguard:
 	sudo pacman -Syu usbguard usbguard-qt
@@ -193,10 +188,6 @@ security: #apparmor audit
 	# ## Turn creating/updating of the cache on by default
 	# write-cache
 
-
-vm_setup:
-	vagrant arch_virtualbox vagrantguest
-
 vagrant:
 	sudo pacman Syu vagrant virtualbox-host-modules-arch virtualbox-guest-iso
 	yay Syu virtualbox-ext-oracle
@@ -227,11 +218,15 @@ ansible_setup:
 execansible:
 	ansible-playbook -i ansible/local ansible/site.yml --tags setup --ask-become-pass
 
-all_install:
-	arch_setup python_setup node_setup ansible_setup vm_setup security_setup something
+something: cups tlp
 
-all_install_wsl:
-	wsl_setup python_setup node_setup ansible_setup vm_setup security_setup something
+vm_setup: vagrant arch_virtualbox vagrantguest
+
+security_setup: firewalld antivirus usbguard security
+
+all_install: arch_setup yay python_setup node_setup ansible_setup vm_setup security_setup something
+
+all_install_wsl: wsl_setup python_setup node_setup ansible_setup vm_setup antivirus something
 
 ######################################################
 
