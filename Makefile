@@ -60,19 +60,11 @@ base_install:
 # linux-lts 安定カーネル
 arch_setup:
 	sudo pacman -Syu gnome gnome-tweaks\
-		linux-lts
-
-	gui_install
-	base_install
-	docker
+		linux-lts --noconfirm
 
 wsl_setup:
-	yay Syu genie-systemd dbus-x11
-	pacman -Syu xfce4
-
-	gui_install
-	base_install
-	docker
+	yay -Syu genie-systemd dbus-x11 --noconfirm
+	pacman -Syu xfce4 --noconfirm
 
 #zeal document browser 言語リファレンス
 # zenity 手軽にguiアプリが作れるやつ
@@ -84,6 +76,7 @@ gui_install:
 		zenity \
 		vlc libreoffice-fresh pinta meld\
 		zeal
+		--noconfirm
 
 yay:
 	yay -Syu ibus-mozc mozc otf-ipaexfont ttf-migu ttf-ricty \
@@ -101,7 +94,7 @@ node_setup:
 
 python_setup:
 	python -m venv ${HOME}/venv/pydev
-	source ${HOME}/venv/pydev/bin/activate
+	# source ${HOME}/venv/pydev/bin/activate
 	#pip実行
 	pip
 
@@ -218,15 +211,16 @@ ansible_setup:
 execansible:
 	ansible-playbook -i ansible/local ansible/site.yml --tags setup --ask-become-pass
 
+
 something: cups tlp
 
 vm_setup: vagrant arch_virtualbox vagrantguest
 
 security_setup: firewalld antivirus usbguard security
 
-all_install: arch_setup yay python_setup node_setup ansible_setup vm_setup security_setup something
+all_install: arch_setup base_install gui_install docker yay python_setup node_setup ansible_setup vm_setup security_setup something
 
-all_install_wsl: wsl_setup python_setup node_setup ansible_setup vm_setup antivirus something
+all_install_wsl: wsl_setup base_install gui_install docker python_setup node_setup ansible_setup vm_setup antivirus something
 
 ######################################################
 
