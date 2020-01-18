@@ -182,8 +182,8 @@ security: #apparmor audit
 	# write-cache
 
 vagrant:
-	sudo pacman Syu vagrant virtualbox-host-modules-arch virtualbox-guest-iso
-	yay Syu virtualbox-ext-oracle
+	sudo pacman -Syu vagrant virtualbox-host-modules-arch virtualbox-guest-iso --noconfirm
+	yay -Syu virtualbox-ext-oracle --noconfirm
 	vagrant plugin install vagrant-vbguest
 	vagrant plugin install vagrant-disksize
 	vagrant vbguest --do install
