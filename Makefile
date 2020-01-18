@@ -22,6 +22,7 @@ init: ## Initial deploy dotfiles
 	mkdir -p ${HOME}/work
 	mkdir -p ${HOME}/work/project
 	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
 	# ln -s ~/MEGAsync/mydev/ansible/ansible/ ~/ansible
 	# ln -s ~/MEGAsync/mydev/ ~/mydev
 	# ln -s ~/MEGAsync/mydev/docker ~/mydocker
@@ -29,7 +30,26 @@ init: ## Initial deploy dotfiles
 	# ln -s ~/MEGAsync/mydev/auto_tools ~/auto_tools
 
 
+init_wsl: ## Initial deploy dotfiles
+	# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	# for f in .??*; do\
+	# 		[ "$$f" = ".git" ] && continue
 
+	# 		ln -snfv "${PWD}/$$f" "${HOME}"/"$$f"
+			
+	# done
+
+	# ln -vsf ${PWD}/.zshrc ${HOME}/.zshrc
+	ln -vsf ${PWD}/.imwheelrc ${HOME}/.imwheelrc
+	ln -vsf ${PWD}/.bashrc ${HOME}/.bashrc
+	ln -vsf ${PWD}/.config ${HOME}/.config
+	ln -vsf ${PWD}/.bash_profile ${HOME}/.bash_profile
+	ln -vsf ${PWD}/.tmux.conf ${HOME}/.tmux.conf
+	ln -vsf ${PWD}/.imwheelrc ${HOME}/.imwheelrc
+
+	mkdir -p ${HOME}/work
+	mkdir -p ${HOME}/work/project
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 # GRUB_DISABLE_SUBMENU=y サブメニューを無効にしておく
 # 設定ファイル生成し直す
 # grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
@@ -214,13 +234,13 @@ execansible:
 
 something: cups tlp
 
-vm_setup: vagrant arch_virtualbox vagrantguest
+vm_setup: vagrant arch_virtualbox
 
 security_setup: firewalld antivirus usbguard security
 
 all_install: arch_setup base_install gui_install docker yay python_setup node_setup ansible_setup vm_setup security_setup something
 
-all_install_wsl: wsl_setup base_install gui_install docker python_setup node_setup ansible_setup vm_setup antivirus something
+all_install_wsl: wsl_setup base_install gui_install docker python_setup node_setup ansible_setup vagrant antivirus something
 
 ######################################################
 
