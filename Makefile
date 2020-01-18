@@ -86,7 +86,7 @@ yay:
 	 --noconfirm
  
 node_setup:
-	sudo pacman Syu yarn
+	sudo pacman -Syu yarn --noconfirm
 	mkdir -p ${HOME}/.node_modules
 	yarn global add n
 	yarn global add @openapitools/openapi-generator-cli
