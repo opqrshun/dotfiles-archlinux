@@ -28,42 +28,64 @@ init: ## Initial deploy dotfiles
 	# ln -s ~/MEGAsync/mydev/project ~/myproject
 	# ln -s ~/MEGAsync/mydev/auto_tools ~/auto_tools
 
-  base:
-	  sudo pacman -Syu base base-devel --noconfirm
-		sudo pacman -S zsh ansible tmux wget vim neovim \
+
+
+# GRUB_DISABLE_SUBMENU=y サブメニューを無効にしておく
+# 設定ファイル生成し直す
+# grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
+
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
+# nkf文字コード変換コマンド
+
+# nkf snapd
+# bind-tools dnstoolsなど
+# sshpass sshログイン自動化
+base_install:
+	sudo pacman -Syu base base-devel \
+		zsh ansible tmux wget vim neovim \
 		bind-tools nmap \
 		cmake lsof htop \
+		pwgen \
+		nodejs yarn php composer python go rust r \
+		mariadb \
+		mysql-python jdk-openjdk shellcheck sshpass\
 		--noconfirm
 
-		# tmux plugin manager
-		# tmux-loggingとか入れる
-		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	# tmux plugin manager
+	# tmux-loggingとか入れる
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-		
-	 
-	# git clone https://aur.archlinux.org/yay.git
-	# cd yay
-	# makepkg -si
-	# nkf文字コード変換コマンド
+# linux-lts 安定カーネル
+arch_setup:
+	sudo pacman -Syu gnome gnome-tweaks\
+		linux-lts
 
-	# nkf snapd
-	# bind-tools dnstoolsなど
-	# sshpass sshログイン自動化
-	# zenity 手軽にguiアプリが作れるやつ
-archinstall: ## Install arch linux packages using pacman
-	 sudo pacman -S pwgen \
-	 filezilla\
-	 zenity \
-	 vlc libreoffice-fresh pinta\
-	 nodejs yarn php composer python go rust r \
-	 mariadb \
-	 mysql-python jdk-openjdk shellcheck sshpass\
-	 --noconfirm
+	gui_install
+	base_install
+	yay
+	docker
 
+wsl_setup:
+	yay Syu genie-systemd dbus-x11
+	pacman -Syu xfce4
+
+	gui_install
+	base_install
+	yay
+	docker
+
+#zeal document browser 言語リファレンス
+# zenity 手軽にguiアプリが作れるやつ
+# meld diff gui tool
 gui_install:
-	sudo pacman -Syu gnome gnome-tweaks \
-	vinagre\
-	sudo pacman -S tilix copyq imwheel
+	sudo pacman -Syu vinagre\
+		tilix copyq imwheel\
+		filezilla \
+		zenity \
+		vlc libreoffice-fresh pinta meld\
+		zeal
 
 yay:
 	yay -Syu ibus-mozc mozc otf-ipaexfont ttf-migu ttf-ricty \
@@ -72,50 +94,72 @@ yay:
 	 rednotebook zoom openprinting-ppds-postscript-ricoh \
 	 --noconfirm
  
+node_setup:
+	sudo pacman Syu yarn
+	mkdir -p ${HOME}/.node_modules
+	yarn global add n
+	yarn global add @openapitools/openapi-generator-cli
+	
 
-# nftablesがあるのでipset,ebtablesは不要？
-firewalld: # battery省電力設定
-	sudo pacman -S firewalld --noconfirm
-	# sudo pacman -S ipset ebtables
-	# -> null
-	sudo systemctl mask ip6tables.service iptables.service 
-	sudo systemctl enable firewalld
-	sudo systemctl start firewalld
+python_setup:
+	python -m venv ${HOME}/venv/pydev
+	source ${HOME}/venv/pydev/bin/activate
+	#pip実行
+	pip
 
+pip:
+	${HOME}/venv/pydev/bin/pip install --user --upgrade pip
+	${HOME}/venv/pydev/bin/pip install -r requirements.txt
+
+something:
+	cups tlp
 # TODO configファイル
 cups:
-	sudo pacman -S cups cups-pdf system-config-printer --noconfirm
+	sudo pacman -Syu cups cups-pdf system-config-printer --noconfirm
 	sudo systemctl enable org.cups.cupsd.service docker
 	sudo systemctl start org.cups.cupsd.service docker
 
 # powertopも入れる？
 tlp: # battery省電力設定
-	sudo pacman -S tlp --noconfirm
+	sudo pacman -Syu tlp --noconfirm
 	# sudo ln -vsf ${PWD}/etc/default/tlp /etc/default/tlp
 	sudo systemctl enable tlp.service
 	sudo systemctl enable tlp-sleep.service
 
 docker:
-	sudo pacman -S docker docker-compose --noconfirm
+	sudo pacman -Syu docker docker-compose --noconfirm
 	sudo systemctl enable docker
 	sudo systemctl start docker
 
 podman:
-	sudo pacman -S podman --noconfirm
+	sudo pacman -Syu podman --noconfirm
 	sudo systemctl enable io.podman.service
 	sudo systemctl start io.podman.service
 
+
+##################
+security_setup:
+	firewalld antivirus usbguard security 
+
 usbguard:
-	sudo pacman -S usbguard usbguard-qt
+	sudo pacman -Syu usbguard usbguard-qt
 	sudo systemctl enable usbguard
 	sudo systemctl start usbguard
 	# sudo usbguard-applet-qt でusbチェック
 
 antivirus:
-	sudo pacman -S clamav clamtk
+	sudo pacman -Syu clamav clamtk
 	sudo freshclam
 	sudo systemctl enable clamav-daemon.service
 	sudo systemctl start clamav-daemon.service
+# nftablesがあるのでipset,ebtablesは不要？
+firewalld: # battery省電力設定
+	sudo pacman -Syu firewalld --noconfirm
+	# sudo pacman Syu ipset ebtables
+	# -> null
+	sudo systemctl mask ip6tables.service iptables.service 
+	sudo systemctl enable firewalld
+	sudo systemctl start firewalld
 
 security: #apparmor audit
 	
@@ -123,8 +167,9 @@ security: #apparmor audit
 	# カーネルパラメータ設定
 	#/etc/default/grub
 	# GRUB_CMDLINE_LINUX_DEFAULTに以下追加
-  # apparmor=1 security=apparmor
-	sudo pacman -S apparmor
+	#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet apparmor=1 security=apparmor"
+
+	sudo pacman Syu apparmor
 	sudo systemctl enable apparmor.service
 
 	# まず学習モードにしておく
@@ -133,7 +178,7 @@ security: #apparmor audit
 	# sudo systemctl reload apparmor.service
 
 	# # audit
-	sudo pacman -S audit --noconfirm
+	sudo pacman -Syu audit --noconfirm
 	sudo systemctl enable auditd
 	sudo systemctl start auditd
 
@@ -148,9 +193,13 @@ security: #apparmor audit
 	# ## Turn creating/updating of the cache on by default
 	# write-cache
 
+
+vm_setup:
+	vagrant arch_virtualbox vagrantguest
+
 vagrant:
-	sudo pacman -S vagrant virtualbox-host-modules-arch virtualbox-guest-iso
-	yay -S virtualbox-ext-oracle
+	sudo pacman Syu vagrant virtualbox-host-modules-arch virtualbox-guest-iso
+	yay Syu virtualbox-ext-oracle
 	vagrant plugin install vagrant-vbguest
 	vagrant plugin install vagrant-disksize
 	vagrant vbguest --do install
@@ -165,40 +214,24 @@ arch_virtualbox: ## nat
 
 # ゲスト側
 vagrantguest:
-	sudo pacman -S virtualbox-guest-utils	
-
-#zeal document browser
-checking:
-	sudo pacman -S zeal
-
-node:
-	sudo pacman -S yarn
-	mkdir -p ${HOME}/.node_modules
-	yarn global add n
-
-npm:
-	npm install @openapitools/openapi-generator-cli -g
-
-# pythoninstall:
-# 	python -m venv ${HOME}/venv/pydev
-# 	source ${HOME}/venv/pydev/bin/activate
-
-pip:
-	${HOME}/venv/pydev/bin/pip install --user --upgrade pip
-	${HOME}/venv/pydev/bin/pip install -r requirements.txt
+	sudo pacman Syu virtualbox-guest-utils	
 	
-
+###################################
 ansible_setup:
 	ansible-galaxy install nginxinc.nginx
 	ansible-galaxy install geerlingguy.apache                                                                               
 	ansible-galaxy install geerlingguy.mysql                                                                               
 	ansible-galaxy install geerlingguy.phpmyadmin                                                                               
 
+#不要
 execansible:
 	ansible-playbook -i ansible/local ansible/site.yml --tags setup --ask-become-pass
 
-allinstall:
-	base archinstall gui_install yay 
+all_install:
+	arch_setup python_setup node_setup ansible_setup vm_setup security_setup something
+
+all_install_wsl:
+	wsl_setup python_setup node_setup ansible_setup vm_setup security_setup something
 
 ######################################################
 
