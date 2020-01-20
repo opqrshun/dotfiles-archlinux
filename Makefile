@@ -14,7 +14,7 @@ init: ## Initial deploy dotfiles
 	ln -vsf ${PWD}/.zshrc ${HOME}/.zshrc
 	ln -vsf ${PWD}/.imwheelrc ${HOME}/.imwheelrc
 	ln -vsf ${PWD}/.bashrc ${HOME}/.bashrc
-	ln -vsf ${PWD}/.config ${HOME}/.config
+	# ln -vsf ${PWD}/.config ${HOME}/.config
 	ln -vsf ${PWD}/.bash_profile ${HOME}/.bash_profile
 	ln -vsf ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 	ln -vsf ${PWD}/.imwheelrc ${HOME}/.imwheelrc
@@ -23,6 +23,16 @@ init: ## Initial deploy dotfiles
 	mkdir -p ${HOME}/work/project
 	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
+vscode_setup:
+	ln -vsf ${HOME}/Dropbox/vscode/settings.json ${HOME}/.config/Code/User/settings.json
+	ln -vsf ${HOME}/Dropbox/vscode/keybindings.json ${HOME}/.config/Code/User/keybindings.json
+	# ln -vsf ${HOME}/Dropbox/autostart/apparmor-notify.desktop ${HOME}/.config/autostart/apparmor-notify.desktop
+	ln -vsf ${HOME}/Dropbox/autostart/imwheel.desktop ${HOME}/.config/autostart/imwheel.desktop
+	ln -vsf ${HOME}/Dropbox/autostart/copyq.desktop ${HOME}/.config/autostart/copyq.desktop
+	ln -vsf ${HOME}/Dropbox/autostart/imwheelrc.desktop ${HOME}/.config/autostart/imwheelrc.desktop
+	
+	
+	# bash setup_vscode.sh
 	# ln -s ~/MEGAsync/mydev/ansible/ansible/ ~/ansible
 	# ln -s ~/MEGAsync/mydev/ ~/mydev
 	# ln -s ~/MEGAsync/mydev/docker ~/mydocker
@@ -92,6 +102,7 @@ wsl_setup:
 gui_install:
 	sudo pacman -Syu vinagre\
 		tilix copyq imwheel\
+		keepassxc\
 		filezilla \
 		zenity \
 		vlc libreoffice-fresh pinta meld\
@@ -103,6 +114,7 @@ yay:
 	 visual-studio-code-bin chrome-gnome-shell-git \
 	 dropbox nautilus-dropbox github-desktop slack-desktop nkf postman\
 	 rednotebook zoom openprinting-ppds-postscript-ricoh \
+	 google-chrome \
 	 --noconfirm
  
 node_setup:
@@ -241,6 +253,13 @@ security_setup: firewalld antivirus usbguard security
 all_install: arch_setup base_install gui_install docker yay python_setup node_setup ansible_setup vm_setup security_setup something
 
 all_install_wsl: wsl_setup base_install gui_install docker python_setup node_setup ansible_setup vagrant antivirus something
+
+
+
+
+
+
+
 
 ######################################################
 
