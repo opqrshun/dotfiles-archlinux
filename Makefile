@@ -78,7 +78,7 @@ base_install:
 		bind-tools nmap \
 		cmake lsof htop \
 		pwgen \
-		nodejs yarn php composer python go rust r \
+		nodejs yarn npm php composer python go rust r \
 		mariadb \
 		mysql-python jdk-openjdk shellcheck sshpass\
 		--noconfirm
