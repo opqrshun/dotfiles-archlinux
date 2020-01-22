@@ -28,8 +28,8 @@ pkglist=(
   GrapeCity.gc-excelviewer
   neilbrayfield.php-docblocker
   joelday.docthis,
-  arjun.swagger-viewer
-
+  arjun.swagger-viewer,
+  joelday.docthis
 )
 
 for i in ${pkglist[@]}; do
