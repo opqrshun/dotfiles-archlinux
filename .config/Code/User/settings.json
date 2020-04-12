@@ -1,0 +1,18 @@
+{
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "prettier.singleQuote": true,
+    "phpcs.composerJsonPath": "/home/taki/.config/composer",
+    "python.pythonPath": "/home/taki/venv/pydev/bin/python",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
+    "phpfmt.indent_with_space": 2,
+    "phpfmt.psr2": false,
+    "phpfmt.psr1": true,
+    "javascript.updateImportsOnFileMove.enabled": "always"
+}
