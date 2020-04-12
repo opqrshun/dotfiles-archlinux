@@ -189,7 +189,7 @@ firewalld: # battery省電力設定
 security: #apparmor audit
 	
 	# apparmor
-	# カーネルパラメータ設定
+	# setup kernel param
 	#/etc/default/grub
 	# GRUB_CMDLINE_LINUX_DEFAULTに以下追加
 	#GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet apparmor=1 security=apparmor"

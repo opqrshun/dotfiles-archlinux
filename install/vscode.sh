@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pkglist=(
+VSCODE_PKG_LIST=(
   JuanBlanco.solidity
   MS-CEINTL.vscode-language-pack-ja
   PeterJausovec.vscode-docker
@@ -36,6 +36,6 @@ pkglist=(
   joelday.docthis
 )
 
-for i in ${pkglist[@]}; do
+for i in "${VSCODE_PKG_LIST[@]}"; do
   code --install-extension $i
 done
