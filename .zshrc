@@ -108,3 +108,10 @@ PATH="$HOME/.local/bin:$HOME/bin:$HOME/.node_modules/bin:$HOME/.yarn/bin:$HOME/.
 export PATH
 export SYSTEMD_LESS=FRXMK # jounalctl less
 alias pydev="source ~/venv/pydev/bin/activate"
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/taki/app/google-cloud-sdk/path.zsh.inc' ]; then . '/home/taki/app/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/taki/app/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/taki/app/google-cloud-sdk/completion.zsh.inc'; fi

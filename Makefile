@@ -72,15 +72,19 @@ init_wsl: ## Initial deploy dotfiles
 # nkf snapd
 # bind-tools dnstoolsなど
 # sshpass sshログイン自動化
+# doxygen graphviz ソースコードドキュメント化
 base_install:
 	sudo pacman -Syu base base-devel \
 		zsh ansible tmux wget vim neovim \
 		bind-tools nmap \
 		cmake lsof htop \
 		pwgen \
-		nodejs yarn npm php composer python go rust r \
+		nodejs yarn npm php composer python go rust r ruby\
 		mariadb \
 		mysql-python jdk-openjdk shellcheck sshpass\
+		doxygen graphviz\
+		terraform\
+		aws-cli\
 		--noconfirm
 
 	# tmux plugin manager
@@ -111,6 +115,7 @@ gui_install:
 
 yay:
 	yay -Syu ibus-mozc mozc otf-ipaexfont ttf-migu ttf-ricty \
+	 haskell-ide-engine\
 	 visual-studio-code-bin chrome-gnome-shell-git \
 	 dropbox nautilus-dropbox github-desktop slack-desktop nkf postman\
 	 rednotebook zoom openprinting-ppds-postscript-ricoh \

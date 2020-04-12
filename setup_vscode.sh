@@ -28,8 +28,11 @@ pkglist=(
   GrapeCity.gc-excelviewer
   neilbrayfield.php-docblocker
   joelday.docthis,
-  arjun.swagger-viewer
-
+  arjun.swagger-viewer,
+  alanz.vscode-hie-server,
+  file-tree-generator,
+  mauve.terraform,
+  amazonwebservices.aws-toolkit-vscode
 )
 
 for i in ${pkglist[@]}; do
