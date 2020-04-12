@@ -33,6 +33,7 @@ pkglist=(
   file-tree-generator,
   mauve.terraform,
   amazonwebservices.aws-toolkit-vscode
+  joelday.docthis
 )
 
 for i in ${pkglist[@]}; do
