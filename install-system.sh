@@ -1,3 +1,3 @@
 #!/bin/bash
-source install/package.sh
-source install/service.sh
+source install/packages.sh
+source install/services.sh
