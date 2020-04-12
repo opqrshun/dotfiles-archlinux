@@ -1,4 +1,4 @@
-export ZSH="/home/andrea/.oh-my-zsh"
+export ZSH="/home/taki/.oh-my-zsh"
 export LC_ALL=en_US.UTF-8
 export TERMINAL=alacritty
 export PAGER=less

@@ -137,11 +137,11 @@ GUI_PACKAGES=(
     'libreoffice-fresh'
     'pinta'
     'meld'
-    'zeal lang reference'
+    'zeal' # lang reference
 )
 
 AUR_PACKAGES=(
-    'gotop'
+    # 'gotop'
     'nerd-fonts-source-code-pro'
     'oh-my-zsh-git'
 
@@ -153,7 +153,7 @@ AUR_PACKAGES=(
     'nkf'
 
     'postman'
-    'haskell-ide-engine'
+    # 'haskell-ide-engine'
     'visual-studio-code-bin'
     'chrome-gnome-shell-git'
     'google-chrome'
@@ -162,7 +162,7 @@ AUR_PACKAGES=(
     'github-desktop'
     'slack-desktop'
 
-    'rednotebook'
+    # 'rednotebook'
     'postman'
     'openprinting-ppds-postscript-ricoh'
 )
