@@ -6,6 +6,13 @@ function setupNode() {
 	yarn global add @openapitools/openapi-generator-cli
 }
 
+#!/usr/bin/env bash
+function setupPython() {
+  python -m venv ${HOME}/venv/pydev
+  ${HOME}/venv/pydev/bin/pip install --user --upgrade pip
+	${HOME}/venv/pydev/bin/pip install -r requirements.txt
+}
+
 function setupDocker() {
   pacman -Syu docker docker-compose --noconfirm
 	systemctl enable docker
