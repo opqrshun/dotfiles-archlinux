@@ -117,7 +117,7 @@ GUI_PACKAGES=(
     'emacs'
     'evince'
     'feh'
-    'firefox'
+    # 'firefox'
     'i3-gaps'
     'i3blocks'
     'i3lock'
