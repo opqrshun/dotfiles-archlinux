@@ -112,7 +112,7 @@ GUI_PACKAGES=(
     'adapta-gtk-theme'
     'adobe-source-code-pro-fonts'
     'alacritty'
-    'compton'
+    'picom'
     'discount'
     'emacs'
     'evince'

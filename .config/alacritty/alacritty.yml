@@ -24,7 +24,7 @@ window:
 
 scrolling:
   multiplier: 1
-  auto_scroll: false
+  auto_scroll: true
 
 tabspaces: 2
 
