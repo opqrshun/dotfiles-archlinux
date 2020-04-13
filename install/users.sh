@@ -10,8 +10,8 @@ operations:
     -s <options> define user's default shell (zsh if blank)
 
 Examples:
-$ sudo ./users.sh -rc andrea -k add
-# ./users.sh -c andrea -k gen -s bash"
+$ sudo ./users.sh -rc taki -k add
+# ./users.sh -c taki -k gen -s bash"
 
 source $(dirname "$0")/shared.sh
 
@@ -73,7 +73,7 @@ function createUser() {
 }
 
 function sshKeys() {
-    banner "I'll import Andrea's SSH keys"
+    banner "I'll import taki's SSH keys"
 
     sudo -u "$createVal" -- sh -c "
     mkdir ~/.ssh

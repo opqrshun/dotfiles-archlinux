@@ -7,7 +7,7 @@
 # Aliases for a few useful commands
 alias mirrorUpdate='sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias pacmanGhost='~/.scripts/pacman.sh'
-alias shivita='toilet -f mono12 -F rainbow 'andrea' | ponythink -f winona'
+alias shivita='toilet -f mono12 -F rainbow 'taki' | ponythink -f winona'
 alias emacs='emacs -nw'
 alias ls='lsd'
 alias l='ls -l'

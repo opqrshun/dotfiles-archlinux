@@ -56,6 +56,7 @@ function setupTlp() {
 
 function setupCups() {
   # TODO configファイル
+	yay -Syu openprinting-ppds-postscript-ricoh --noconfirm
   pacman -Syu cups cups-pdf system-config-printer --noconfirm
 	systemctl enable org.cups.cupsd.service docker
 	systemctl start org.cups.cupsd.service docker

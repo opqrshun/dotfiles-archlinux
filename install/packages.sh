@@ -50,9 +50,9 @@ BASE_PACKAGES=(
     # 'ffmpegthumbnailer'
     'firewalld'
     'git'
-    # 'go'
-    # 'go-pie'
-    # 'go-tools'
+    'go'
+    'go-pie'
+    'go-tools'
     'highlight'
     'htop'
     'jq'
@@ -141,12 +141,12 @@ GUI_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    # 'gotop'
+    'gotop'
     'nerd-fonts-source-code-pro'
     'oh-my-zsh-git'
-
-    'mozc'
+    
     'ibus-mozc'
+    'mozc'
     'otf-ipaexfont'
     'ttf-migu'
     'ttf-ricty'
@@ -164,7 +164,6 @@ AUR_PACKAGES=(
 
     # 'rednotebook'
     'postman'
-    'openprinting-ppds-postscript-ricoh'
 )
 
 function installAurPackages() {

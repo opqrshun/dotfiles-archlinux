@@ -202,4 +202,4 @@ exec_always --no-startup-id ~/.scripts/wallpapers.sh
 exec --no-startup-id betterlockscreen -w dim
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id notify-send "Welcome back Andrea!" -i ~/.images/icons8-dog-100.png
+exec --no-startup-id notify-send "Welcome back taki!" -i ~/.images/icons8-dog-100.png
