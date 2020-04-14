@@ -1,7 +1,7 @@
---theme="OneHalfDark"
+--theme="TwoDark"
 
 # Show line numbers, Git modifications and file header (but no grid)
---style="numbers,changes"
+--style="numbers,changes,header"
 
 # Add mouse scrolling support in less (does not work with older
 # versions of "less")
@@ -9,3 +9,9 @@
 
 # Use C++ syntax (instead of C) for .h header files
 --map-syntax h:cpp
+
+# Use C++ syntax for .ino files
+--map-syntax "*.ino:C++"
+
+# Use ".gitignore"-style highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"

@@ -135,7 +135,5 @@ plugins=(
 setopt HIST_IGNORE_SPACE
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
-complete -o nospace -C /usr/bin/vault vault
-complete -o nospace -C /usr/bin/terraform terraform
 
 export VAULT_SKIP_VERIFY=true

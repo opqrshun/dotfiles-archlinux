@@ -45,6 +45,7 @@ BASE_PACKAGES=(
     'bat'
     'blueman'
     'bluez-utils'
+    'cmus'
     'curl'
     'dhcpcd'
     # 'ffmpegthumbnailer'
@@ -144,6 +145,7 @@ AUR_PACKAGES=(
     'gotop'
     'nerd-fonts-source-code-pro'
     'oh-my-zsh-git'
+    'uzbl-browser'
     
     'ibus-mozc'
     'mozc'
@@ -155,7 +157,6 @@ AUR_PACKAGES=(
     'postman'
     # 'haskell-ide-engine'
     'visual-studio-code-bin'
-    'chrome-gnome-shell-git'
     'google-chrome'
     'dropbox'
     'nautilus-dropbox'
@@ -263,18 +264,10 @@ if [ "$(uname -m)" == 'x86_64' ]; then
 fi
 
 if [ -z "$gnomeFlag" ]; then
-    BASE_PACKAGES+=('acpi'
-                    'reflector'
-                    'playerctl'
-                    'pulseaudio'
-                    'pulseaudio-alsa'
-                    'pulseaudio-bluetooth'
-                    'xfce4-power-manager')
-    GUI_PACKAGES+=('pinta'
-                   'pavucontrol'
-                   'vlc'
-                   'xorg-xinit')
-    AUR_PACKAGES+=('pulseaudio-ctl')
+    GUI_PACKAGES+=('gnome'
+                    'gnome-tweaks')
+
+    AUR_PACKAGES+=('chrome-gnome-shell-git')
 fi
 
 installPackages
