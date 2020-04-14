@@ -1,4 +1,5 @@
-set $mod Mod1
+# Default modkey
+set $mod Mod4
 
 new_window pixel 1
 new_float normal
