@@ -151,7 +151,7 @@ AUR_PACKAGES=(
     'gotop'
     'nerd-fonts-source-code-pro'
     'oh-my-zsh-git'
-    'uzbl-tabbed'
+    # 'uzbl-tabbed'
     
     'ibus-mozc'
     'mozc'
