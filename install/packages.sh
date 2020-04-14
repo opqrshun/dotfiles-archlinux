@@ -151,7 +151,7 @@ AUR_PACKAGES=(
     'gotop'
     'nerd-fonts-source-code-pro'
     'oh-my-zsh-git'
-    'uzbl-browser'
+    'uzbl-tabbed'
     
     'ibus-mozc'
     'mozc'
@@ -277,7 +277,7 @@ if [ "$(uname -m)" == 'x86_64' ]; then
     AUR_PACKAGES+=('pulseaudio-ctl')
 fi
 
-if [ -z "$gnomeFlag" ]; then
+if [ -n "$gnomeFlag" ]; then
     GUI_PACKAGES+=('gnome'
                     'gnome-tweaks')
 
