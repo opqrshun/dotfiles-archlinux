@@ -159,9 +159,6 @@ AUR_PACKAGES=(
     'visual-studio-code-bin'
     'google-chrome'
     'dropbox'
-    'nautilus-dropbox'
-    'github-desktop'
-    'slack-desktop'
 
     # 'rednotebook'
     'postman'
@@ -267,7 +264,10 @@ if [ -z "$gnomeFlag" ]; then
     GUI_PACKAGES+=('gnome'
                     'gnome-tweaks')
 
-    AUR_PACKAGES+=('chrome-gnome-shell-git')
+    AUR_PACKAGES+=('chrome-gnome-shell-git'
+                    'nautilus-dropbox'
+                    'github-desktop'
+                    'slack-desktop')
 fi
 
 installPackages

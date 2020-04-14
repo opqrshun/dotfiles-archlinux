@@ -115,9 +115,8 @@ function setupFirewalld() {
 
 
 setUpNode
-setupTlp
 setupDocker
 setupAnsible
 setupAntivirus
 setupFirewalld
-setupTlp
+# setupTlp
