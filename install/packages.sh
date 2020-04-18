@@ -87,7 +87,6 @@ BASE_PACKAGES=(
     'php'
     'composer'
     'python'
-    'python-pip'
     'rust'
     'r'
     'ruby'
@@ -118,11 +117,11 @@ GUI_PACKAGES=(
     'discount'
     'emacs'
     'evince'
+    'feh'
     # 'firefox'
     'i3-gaps'
     'i3blocks'
     'i3lock'
-    'nitrogen'
     'npm'
     'papirus-icon-theme'
     'rofi'
@@ -140,11 +139,6 @@ GUI_PACKAGES=(
     'pinta'
     'meld'
     'zeal' # lang reference
-
-    'ttf-font-awesome'
-    'binutils'
-    'pkg-config'
-    'python-yaml'
 )
 
 AUR_PACKAGES=(
@@ -221,17 +215,6 @@ function installSpacemacs() {
     fi
 }
 
-# function installTheme() {
-#     if [ "$(uname -m)" == 'x86_64' ]; then
-
-#         sudo -u "$SUDO_USER" -- sh -c "
-#         git clone https://github.com/unix121/i3wm-themer
-#         cd ~/i3wm-themer/
-#         ./install_arch.sh
-#         python i3wm-themer.py --config config.yaml --load themes/011.json"
-#     fi
-# }
-
 function installPackages() {
     banner "I will install the base system"
     configurePacman
@@ -291,6 +274,5 @@ installPackages
 installAurPackages
 installOhMyZsh
 installSpacemacs
-# installTheme
 
 banner "Done :)"
