@@ -26,7 +26,7 @@ decorations: none
 colors:
   # Default colors
   primary:
-    background: '0x252526'
+    background: '0x00070F'
     foreground: '0xc4c7d1'
 
   # Normal colors
