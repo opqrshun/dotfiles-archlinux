@@ -117,7 +117,6 @@ GUI_PACKAGES=(
     'discount'
     'emacs'
     'evince'
-    'feh'
     # 'firefox'
     'i3-gaps'
     'i3blocks'
@@ -138,6 +137,7 @@ GUI_PACKAGES=(
     'libreoffice-fresh'
     'pinta'
     'meld'
+    'nitrogen'
     'zeal' # lang reference
 )
 
