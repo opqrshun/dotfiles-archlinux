@@ -19,6 +19,9 @@ font:
     # style: Italic
 
     
+
+decorations: none
+
 # Colors (Material Theme)
 colors:
   # Default colors
