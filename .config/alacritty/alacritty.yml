@@ -1,3 +1,6 @@
+
+decorations: none,transparent
+
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.
@@ -20,7 +23,6 @@ font:
 
     
 
-decorations: none
 
 # Colors (Material Theme)
 colors:
