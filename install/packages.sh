@@ -153,6 +153,7 @@ AUR_PACKAGES=(
     'ttf-migu'
     'ttf-ricty'
     'nkf'
+    'polybar'
 
     'postman'
     # 'haskell-ide-engine'
