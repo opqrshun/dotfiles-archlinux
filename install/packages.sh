@@ -137,7 +137,6 @@ GUI_PACKAGES=(
     'libreoffice-fresh'
     'pinta'
     'meld'
-    'nitrogen'
     'zeal' # lang reference
 )
 
