@@ -183,6 +183,9 @@ bindsym $mod+r mode "resize"
 #}
 
 # Autostart applications
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#start redshift
+exec --no-startup-id redshift
