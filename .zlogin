@@ -1,2 +1,2 @@
 # touchpad "NaturalScrolling" "true"
-xinput set-prop 11 307 1
+xinput set-prop 12 304 1
