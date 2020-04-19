@@ -120,8 +120,6 @@ GUI_PACKAGES=(
     'emacs'
     'evince'
     # 'firefox'
-    'i3-gaps'
-    'i3lock'
     'light'
     'npm'
     'papirus-icon-theme'
