@@ -197,6 +197,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #
 # Status Bar:
 #
@@ -230,7 +232,6 @@ bindsym $mod+d exec rofi -show drun -columns 3 -hide-scrollbar -show-icons -drun
 # Autostart applications
 
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #start redshift
 exec --no-startup-id redshift
