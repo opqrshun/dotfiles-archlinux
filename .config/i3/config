@@ -190,6 +190,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #start redshift
 exec --no-startup-id redshift
 
+#start ibus
+exec --no-startup-id ibus-daemon
+
 # brightness
 bindsym XF86MonBrightnessUp exec  light -A 10
 bindsym XF86KbdBrightnessDown exec light -U 10
