@@ -120,7 +120,6 @@ GUI_PACKAGES=(
     'evince'
     # 'firefox'
     'i3-gaps'
-    'i3blocks'
     'i3lock'
     'light'
     'npm'
