@@ -189,3 +189,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #start redshift
 exec --no-startup-id redshift
+
+# brightness
+bindsym XF86KbdBrightnessUp exec kbdbacklight up
+bindsym XF86KbdBrightnessDown exec kbdbacklight down 
