@@ -191,7 +191,7 @@ exec --no-startup-id redshift
 
 #start ibus
 exec --no-startup-id ibus-daemon -d
-ecec --no-startup-id imwheel
+exec --no-startup-id imwheel
 
 # brightness
 bindsym XF86MonBrightnessUp exec  light -A 10
