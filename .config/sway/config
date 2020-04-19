@@ -231,8 +231,6 @@ font pango: SpaceMono Nerd Font Mono Medium 11
 bindsym $mod+d exec rofi -show drun -columns 3 -hide-scrollbar -show-icons -drun-icon-theme "Papirus"
 # Autostart applications
 
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-
 #start redshift
 exec --no-startup-id redshift
 
