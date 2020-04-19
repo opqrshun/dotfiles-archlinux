@@ -112,6 +112,7 @@ CLI_PACKAGES=(
 GUI_PACKAGES=(
     'adapta-gtk-theme'
     'adobe-source-code-pro-fonts'
+    'terminus-font'
     'alacritty'
     'picom'
     'discount'
