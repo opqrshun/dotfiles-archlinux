@@ -163,6 +163,7 @@ AUR_PACKAGES=(
 
     # 'rednotebook'
     'postman'
+    'redshift'
 )
 
 function installAurPackages() {
