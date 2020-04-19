@@ -194,7 +194,7 @@ exec --no-startup-id ibus-daemon -d
 exec --no-startup-id imwheel
 exec --no-startup-id copyq
 exec --no-startup-id dropbox start -i
-exec --no-startup-id $HOME/taki/app/pcloud
+exec --no-startup-id $HOME/app/pcloud
 
 
 # brightness
