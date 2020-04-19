@@ -122,6 +122,7 @@ GUI_PACKAGES=(
     'i3-gaps'
     'i3blocks'
     'i3lock'
+    'light'
     'npm'
     'papirus-icon-theme'
     'rofi'
