@@ -200,3 +200,5 @@ exec --no-startup-id ibus-daemon
 # brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+exec i3 -V >> ~/log/i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
