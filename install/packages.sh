@@ -50,6 +50,7 @@ BASE_PACKAGES=(
     'dhcpcd'
     # 'ffmpegthumbnailer'
     'firewalld'
+    'fuse2'
     'git'
     # 'go'
     # 'go-pie'
