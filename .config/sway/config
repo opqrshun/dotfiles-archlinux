@@ -221,7 +221,7 @@ include /etc/sway/config.d/*
 ####
 
 # set bg
-output * bg $HOME/.config/sway/bg.jpg
+output * bg $HOME/.config/sway/bg.jpg fill
 #font setting
 font pango: SpaceMono Nerd Font Mono Medium 11
 
