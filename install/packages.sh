@@ -61,6 +61,7 @@ BASE_PACKAGES=(
     'lsd'
     'mediainfo'
     'neofetch'
+    'termsyn-font'
     'odt2txt'
     'openvpn'
     'openssh'
@@ -71,7 +72,7 @@ BASE_PACKAGES=(
     'usbguard'
     # 'weechat'
     'whois'
-    # 'xterm'
+    'xterm'
     'zsh'
     'zsh-theme-powerlevel9k'
 
@@ -145,6 +146,7 @@ GUI_PACKAGES=(
 AUR_PACKAGES=(
     'gotop'
     'nerd-fonts-source-code-pro'
+    'siji-git'
     'oh-my-zsh-git'
     # 'uzbl-tabbed'
     
