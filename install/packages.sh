@@ -69,7 +69,7 @@ BASE_PACKAGES=(
     'poppler'
     'ranger'
     'tmux'
-    'usbguard'
+    # 'usbguard'
     # 'weechat'
     'whois'
     'xterm'

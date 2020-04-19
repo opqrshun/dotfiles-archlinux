@@ -40,10 +40,16 @@ function setupAnsible() {
 # }
 
 function setupAntivirus() {
-  pacman -Syu clamav clamtk
+  pacman -Syu clamav clamtk --noconfirm
 	freshclam
 	systemctl enable clamav-daemon.service
 	systemctl start clamav-daemon.service
+}
+
+function setupDevMon() {
+  pacman -Syu  udevil --noconfirm
+	systemctl enable devmon@.service
+	systemctl start devmon@taki.service
 }
 
 
@@ -119,4 +125,5 @@ setupDocker
 setupAnsible
 setupAntivirus
 setupFirewalld
+setupDevMon
 # setupTlp
