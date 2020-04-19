@@ -51,9 +51,9 @@ BASE_PACKAGES=(
     # 'ffmpegthumbnailer'
     'firewalld'
     'git'
-    'go'
-    'go-pie'
-    'go-tools'
+    # 'go'
+    # 'go-pie'
+    # 'go-tools'
     'highlight'
     'htop'
     'jq'
@@ -61,7 +61,6 @@ BASE_PACKAGES=(
     'lsd'
     'mediainfo'
     'neofetch'
-    'termsyn-font'
     'odt2txt'
     'openvpn'
     'openssh'
@@ -113,7 +112,8 @@ CLI_PACKAGES=(
 GUI_PACKAGES=(
     'adapta-gtk-theme'
     'adobe-source-code-pro-fonts'
-    'terminus-font'
+    # 'terminus-font'
+    'tamsyn-font'
     'alacritty'
     'picom'
     'discount'
@@ -144,7 +144,7 @@ GUI_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    'gotop'
+    # 'gotop'
     'nerd-fonts-source-code-pro'
     'siji-git'
     'oh-my-zsh-git'

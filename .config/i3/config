@@ -192,6 +192,10 @@ exec --no-startup-id redshift
 #start ibus
 exec --no-startup-id ibus-daemon -d
 exec --no-startup-id imwheel
+exec --no-startup-id copyq
+exec --no-startup-id dropbox start -i
+exec --no-startup-id $HOME/taki/app/pcloud
+
 
 # brightness
 bindsym XF86MonBrightnessUp exec  light -A 10
