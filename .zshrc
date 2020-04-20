@@ -20,6 +20,7 @@ alias x='ranger'
 alias c='cmus'
 alias h='htop'
 alias vi='nvim'
+alias vim='nvim'
 
 # Show OS info when opening a new terminal
 neofetch
