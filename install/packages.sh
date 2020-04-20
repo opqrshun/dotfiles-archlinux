@@ -91,6 +91,7 @@ BASE_PACKAGES=(
     'rust'
     'r'
     'ruby'
+    'lua'
 
     'mariadb'
     'mysql-python'
@@ -145,6 +146,7 @@ GUI_PACKAGES=(
 )
 
 AUR_PACKAGES=(
+    'conky-lua'#https://wiki.archlinux.jp/index.php/Conky
     # 'gotop'
     'nerd-fonts-source-code-pro'
     'siji-git'
@@ -270,7 +272,9 @@ if [ -n "$gnomeFlag" ]; then
     GUI_PACKAGES+=('gnome'
                     'gnome-tweaks')
 
-    AUR_PACKAGES+=('chrome-gnome-shell-git'
+    AUR_PACKAGES+=(
+        'gnome-shell-extension-system-monitor-git'
+        'chrome-gnome-shell-git'
                     'nautilus-dropbox'
                     'github-desktop'
                     'slack-desktop')
