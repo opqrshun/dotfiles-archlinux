@@ -1,6 +1,9 @@
+title: Alacritty
+decorations: none
+
 # Font configuration (changes require restart)
 font:
-  size: 9.0
+  size: 12.0
   # The normal (roman) font face to use.
   normal:
     family: Droid Sans Mono Slashed for Powerline
@@ -21,7 +24,6 @@ font:
 
     
 
-decorations: none
 
 # Colors (Material Theme)
 colors:
