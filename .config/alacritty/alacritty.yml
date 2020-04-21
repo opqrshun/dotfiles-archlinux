@@ -1,3 +1,5 @@
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
 title: Alacritty
 decorations: none
 
@@ -6,7 +8,7 @@ font:
   size: 12.0
   # The normal (roman) font face to use.
   normal:
-    family: Droid Sans Mono Slashed for Powerline
+    family: Ricty
     # Style can be specified to pick a specific face.
     style: Regular
 

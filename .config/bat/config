@@ -1,7 +1,7 @@
 --theme="TwoDark"
 
 # Show line numbers, Git modifications and file header (but no grid)
---style="numbers,changes,header"
+--style="numbers,changes"
 
 # Add mouse scrolling support in less (does not work with older
 # versions of "less")
