@@ -49,8 +49,10 @@ zstyle ':prezto:load' pmodule \
   'python' \
   'node' \
   'ssh' \
-  'syntax-hightlighting'\
-  'tmux'
+  'spectrum' \
+  'syntax-highlighting' \
+  'tmux'\
+  'utility'
   
   
   
