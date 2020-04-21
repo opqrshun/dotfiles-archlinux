@@ -1,3 +1,17 @@
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:stash show yes
+prompt pure
 
 
 # Aliases
@@ -16,6 +30,6 @@ alias h='htop'
 alias vi='nvim'
 alias vim='nvim'
 alias cat='bat'
-
 # Show OS info when opening a new terminal
 neofetch
+
