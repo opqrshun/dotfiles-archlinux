@@ -24,5 +24,3 @@ if [[ -o INTERACTIVE && -t 2 ]]; then
   fi
 
 fi >&2
-~
-~
