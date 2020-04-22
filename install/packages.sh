@@ -190,20 +190,10 @@ function installYay() {
     yes | makepkg -si"
 }
 
-function installOhMyZsh() {
-    local URL='https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh'
-    banner "I will install Oh My Zsh and plugins"
-
-    sudo -u "$SUDO_USER" -- sh -c "$(curl -fsSL $URL)"
-    sudo -u "$SUDO_USER" -- sh -c "
-    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-    cd ~/.oh-my-zsh/custom/themes/powerlevel9k
-    git checkout next
-    cd - &>/dev/null"
+function setUPZsh() {
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    chsh -s /bin/zsh
+    yarn install --global pure-prompt
 }
 
 function configurePacman() {
@@ -282,7 +272,7 @@ fi
 
 installPackages
 installAurPackages
-installOhMyZsh
+setUPZsh
 installSpacemacs
 
 banner "Done :)"
