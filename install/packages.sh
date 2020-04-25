@@ -193,7 +193,13 @@ function installYay() {
 function setUPZsh() {
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
     chsh -s /bin/zsh
+
+    # install pure prompt
     yarn install --global pure-prompt
+}
+
+function installSpaceVim() {
+    curl -sLf https://spacevim.org/install.sh | bash
 }
 
 function configurePacman() {
@@ -273,6 +279,7 @@ fi
 installPackages
 installAurPackages
 setUPZsh
+installSpaceVim
 installSpacemacs
 
 banner "Done :)"
