@@ -14,6 +14,9 @@ zstyle :prompt:pure:git:stash show yes
 prompt pure
 
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Aliases
 alias mirrorUpdate='sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias emacs='emacs -nw'

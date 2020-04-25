@@ -4,6 +4,8 @@ function setupNode() {
   mkdir -p "$HOME/.node_modules"
 	yarn global add n
 	yarn global add @openapitools/openapi-generator-cli
+	yarn global add eslint-cli
+	yarn global add js-beautify
 }
 
 #!/usr/bin/env bash
@@ -11,6 +13,14 @@ function setupPython() {
   python -m venv ${HOME}/venv/pydev
   ${HOME}/venv/pydev/bin/pip install --user --upgrade pip
 	${HOME}/venv/pydev/bin/pip install -r requirements.txt
+}
+
+#!/usr/bin/env bash
+function setupPHP() {
+	composer require --dev vimeo/psalm
+}
+function setuoGo() {
+	pacman -Syu go go-pie go-tools --noconfirm
 }
 
 function setupDocker() {
@@ -120,7 +130,9 @@ function setupFirewalld() {
 # }
 
 
-setUpNode
+setupNode
+setupPHP
+setupGo
 setupDocker
 setupAnsible
 setupAntivirus
