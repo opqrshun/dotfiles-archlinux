@@ -46,6 +46,9 @@ default_height = 30
 [[layers]]
   name = "github"
 
+[[layers]]
+  name = "lang#debug"
+
 # language layers
 [[layers]]
   name = "lang#go"
@@ -61,6 +64,15 @@ name = "lang#php"
 
 [[layers]]
   name = "lang#python"
+
+[[layers]]
+  name = "lang#haskell"
+
+[[layers]]
+  name = "lang#swift"
+
+[[layers]]
+  name = "lang#sh"
 
 [[layers]]
   name = "lang#dockerfile"

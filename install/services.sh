@@ -7,7 +7,7 @@ function setupNode() {
 	yarn global add eslint-cli
 	yarn global add js-beautify
 }
-
+	
 #!/usr/bin/env bash
 function setupPython() {
   python -m venv ${HOME}/venv/pydev

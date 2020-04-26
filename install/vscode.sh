@@ -32,8 +32,9 @@ VSCODE_PKG_LIST=(
   alanz.vscode-hie-server,
   file-tree-generator,
   mauve.terraform,
-  amazonwebservices.aws-toolkit-vscode
-  joelday.docthis
+  amazonwebservices.aws-toolkit-vscode,
+  joelday.docthis,
+  vscodevim.vim
 )
 
 for i in "${VSCODE_PKG_LIST[@]}"; do
