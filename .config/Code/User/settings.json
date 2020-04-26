@@ -14,5 +14,7 @@
     "phpfmt.indent_with_space": 2,
     "phpfmt.psr2": false,
     "phpfmt.psr1": true,
-    "javascript.updateImportsOnFileMove.enabled": "always"
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "vim.easymotion": true,
+    "vim.enableNeovim": true
 }
