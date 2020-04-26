@@ -154,6 +154,7 @@ AUR_PACKAGES=(
     # 'rednotebook'
     'postman'
     'redshift'
+    'zoom'
 )
 
 function installAurPackages() {
