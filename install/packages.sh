@@ -133,7 +133,7 @@ GUI_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    'conky-lua'#https://wiki.archlinux.jp/index.php/Conky
+    'conky-lua' # https://wiki.archlinux.jp/index.php/Conky
     # 'gotop'
     'nerd-fonts-source-code-pro'
     'siji-git'
