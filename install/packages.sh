@@ -106,7 +106,6 @@ BASE_PACKAGES=(
 
 CLI_PACKAGES=(
     'elinks'
-    'emacs-nox'
 )
 
 GUI_PACKAGES=(
@@ -117,20 +116,11 @@ GUI_PACKAGES=(
     'alacritty'
     'picom'
     'discount'
-    'emacs'
     'evince'
     # 'firefox'
-    'i3-gaps'
-    'i3lock'
     'light'
     'npm'
     'papirus-icon-theme'
-    'rofi'
-    'xbindkeys'
-    'xfce4-notifyd'
-    'xfce4-screenshooter'
-    'xorg'
-
     'vinagre' #vnc
     'imwheel'
     'keepassxc'
@@ -139,7 +129,6 @@ GUI_PACKAGES=(
     'libreoffice-fresh'
     'pinta'
     'meld'
-    'nitrogen'
     'zeal' # lang reference
 )
 
@@ -148,7 +137,6 @@ AUR_PACKAGES=(
     # 'gotop'
     'nerd-fonts-source-code-pro'
     'siji-git'
-    'oh-my-zsh-git'
     # 'uzbl-tabbed'
     
     'ibus-mozc'
@@ -157,8 +145,6 @@ AUR_PACKAGES=(
     'ttf-migu'
     'ttf-ricty'
     'nkf'
-    'polybar'
-
     'postman'
     # 'haskell-ide-engine'
     'visual-studio-code-bin'
@@ -205,18 +191,6 @@ function configurePacman() {
     sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
 }
 
-function installSpacemacs() {
-    if [ "$(uname -m)" == 'x86_64' ]; then
-        banner "I will install spacemacs"
-
-        sudo -u "$SUDO_USER" -- sh -c "
-        git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d &>/dev/null
-        cd ~/.emacs.d
-        git checkout develop &>/dev/null
-        cd - &>/dev/null"
-    fi
-}
-
 function installPackages() {
     banner "I will install the base system"
     configurePacman
@@ -254,11 +228,11 @@ if [ "$(uname -m)" == 'x86_64' ]; then
                     'pulseaudio'
                     'pulseaudio-alsa'
                     'pulseaudio-bluetooth'
-                    'xfce4-power-manager')
+                    )
     GUI_PACKAGES+=('pinta'
                    'pavucontrol'
                    'vlc'
-                   'xorg-xinit')
+    ) 
     AUR_PACKAGES+=('pulseaudio-ctl')
 fi
 
@@ -278,6 +252,5 @@ installPackages
 installAurPackages
 setUPZsh
 installSpaceVim
-installSpacemacs
 
 banner "Done :)"
