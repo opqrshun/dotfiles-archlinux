@@ -2,6 +2,7 @@
     "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
     "prettier.singleQuote": true,
     "phpcs.composerJsonPath": "/home/taki/.config/composer",
     "python.pythonPath": "/home/taki/venv/pydev/bin/python",
