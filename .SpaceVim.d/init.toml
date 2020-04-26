@@ -26,6 +26,8 @@
 
     #custom
     automatic_update = true
+    vimcompatible = true
+    
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
