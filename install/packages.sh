@@ -179,7 +179,7 @@ function setUPZsh() {
     chsh -s /bin/zsh
 
     # install pure prompt
-    yarn install --global pure-prompt
+    yarn global add pure-prompt
 }
 
 function installSpaceVim() {
