@@ -19,7 +19,7 @@ function setupPython() {
 function setupPHP() {
 	composer require --dev vimeo/psalm
 }
-function setuoGo() {
+function setupGo() {
 	pacman -Syu go go-pie go-tools --noconfirm
 }
 
@@ -41,6 +41,10 @@ function setupAnsible() {
 	ansible-galaxy install geerlingguy.apache                                                                               
 	ansible-galaxy install geerlingguy.mysql                                                                               
 	ansible-galaxy install geerlingguy.phpmyadmin     
+}
+
+function setupTmux() {
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 # function setupUsbguard() {
@@ -135,7 +139,9 @@ setupPHP
 setupGo
 setupDocker
 setupAnsible
+setupTmux
 setupAntivirus
 setupFirewalld
 setupDevMon
+
 # setupTlp
