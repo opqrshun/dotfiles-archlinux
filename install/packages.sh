@@ -69,12 +69,15 @@ BASE_PACKAGES=(
     'ranger'
     'ripgrep' # recursively searches directorys
     'tmux'
+    'tree'
+    'tig' #git
+    'tldr' #man usage comunity
     # 'usbguard'
     # 'weechat'
     'whois'
     'xterm'
+    'z'
     'zsh'
-    'zsh-theme-powerlevel9k'
 
     'wget'
     'neovim'
@@ -97,6 +100,8 @@ BASE_PACKAGES=(
     'mysql-python'
     'jdk-openjdk'
 
+    'cloc' #counts blank lines ..etc
+    'hub' #github cli
     'shellcheck'
     'sshpass'
 	'doxygen'
@@ -137,6 +142,7 @@ GUI_PACKAGES=(
 AUR_PACKAGES=(
     'conky-lua' # https://wiki.archlinux.jp/index.php/Conky
     # 'gotop'
+    'lazygit'
     'nerd-fonts-source-code-pro'
     'siji-git'
     # 'uzbl-tabbed'
@@ -147,6 +153,7 @@ AUR_PACKAGES=(
     'ttf-migu'
     'ttf-ricty'
     'nkf'
+    'noti' # monitor a process and trigger a notification
     'postman'
     # 'haskell-ide-engine'
     'visual-studio-code-bin'

@@ -16,7 +16,7 @@ prompt pure
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
+source /usr/share/z/z.sh
 # Aliases
 alias mirrorUpdate='sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias emacs='emacs -nw'
