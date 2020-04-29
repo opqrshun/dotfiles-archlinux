@@ -27,7 +27,12 @@
     #custom
     automatic_update = true
     vimcompatible = true
-    
+
+# [[custom_plugins]]
+# name = "tpope/vim-surround"
+# merged = false
+
+   
 [[custom_plugins]]
 name = "tpope/vim-commentary"
 merged = false

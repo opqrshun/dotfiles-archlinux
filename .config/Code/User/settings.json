@@ -17,5 +17,6 @@
     "phpfmt.psr1": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "vim.easymotion": true,
-    "vim.enableNeovim": true
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim"
 }
