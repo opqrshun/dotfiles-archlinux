@@ -50,6 +50,7 @@ BASE_PACKAGES=(
     'dhcpcd'
     # 'ffmpegthumbnailer'
     'firewalld'
+    'fd' #find
     'fuse2'
     'fzf'
     'git'
@@ -66,6 +67,7 @@ BASE_PACKAGES=(
     'pacman-contrib'
     'poppler'
     'ranger'
+    'ripgrep' # recursively searches directorys
     'tmux'
     # 'usbguard'
     # 'weechat'
