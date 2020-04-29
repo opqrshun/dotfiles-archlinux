@@ -254,7 +254,6 @@ if [ -n "$gnomeFlag" ]; then
         'gnome-shell-extension-system-monitor-git'
         'chrome-gnome-shell-git'
                     'nautilus-dropbox'
-                    'github-desktop'
                     'slack-desktop')
 fi
 
