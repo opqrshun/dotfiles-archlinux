@@ -28,6 +28,10 @@
     automatic_update = true
     vimcompatible = true
     
+[[custom_plugins]]
+name = "tpope/vim-commentary"
+merged = false
+
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
