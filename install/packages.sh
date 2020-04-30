@@ -69,7 +69,6 @@ BASE_PACKAGES=(
     'ranger'
     'ripgrep' # recursively searches directorys
     'tmux'
-    'tree'
     'tig' #git
     'tldr' #man usage comunity
     # 'usbguard'
