@@ -143,6 +143,7 @@ AUR_PACKAGES=(
     'conky-lua' # https://wiki.archlinux.jp/index.php/Conky
     # 'gotop'
     'lazygit'
+    'lazydocker'
     'nerd-fonts-source-code-pro'
     'siji-git'
     # 'uzbl-tabbed'
