@@ -184,18 +184,6 @@ function installYay() {
     yes | makepkg -si"
 }
 
-function setUPZsh() {
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-    chsh -s /bin/zsh
-
-    # install pure prompt
-    yarn global add pure-prompt
-}
-
-function installSpaceVim() {
-    curl -sLf https://spacevim.org/install.sh | bash
-}
-
 function configurePacman() {
     sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
     sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
@@ -259,7 +247,5 @@ fi
 
 installPackages
 installAurPackages
-setUPZsh
-installSpaceVim
 
 banner "Done :)"
