@@ -33,6 +33,7 @@ alias h='htop'
 alias vi='nvim'
 alias vim='nvim'
 alias cat='bat'
+alias relogin='exec $SHELL -l'
 # Show OS info when opening a new terminal
 neofetch
 
