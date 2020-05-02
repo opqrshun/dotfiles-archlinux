@@ -122,7 +122,7 @@ GUI_PACKAGES=(
     'alacritty'
     'picom'
     'discount'
-    'evince'
+    'evince' # pdf viewer
     # 'firefox'
     'light'
     'npm'
