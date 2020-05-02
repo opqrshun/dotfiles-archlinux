@@ -243,7 +243,8 @@ if [ -n "$gnomeFlag" ]; then
         'gnome-shell-extension-system-monitor-git'
         'chrome-gnome-shell-git'
                     'nautilus-dropbox'
-                    'slack-desktop')
+                    'slack-desktop'
+                    'copyq')
 fi
 
 installPackages
