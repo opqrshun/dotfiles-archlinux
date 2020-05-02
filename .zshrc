@@ -19,7 +19,6 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/z/z.sh
 # Aliases
 alias mirrorUpdate='sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
-alias emacs='emacs -nw'
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'

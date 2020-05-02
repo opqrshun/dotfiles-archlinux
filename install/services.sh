@@ -43,10 +43,6 @@ function setupAnsible() {
 	ansible-galaxy install geerlingguy.phpmyadmin     
 }
 
-function setupTmux() {
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-}
-
 # function setupUsbguard() {
 #   pacman -Syu usbguard usbguard-qt
 # 	systemctl enable usbguard
@@ -139,7 +135,6 @@ setupPHP
 setupGo
 setupDocker
 setupAnsible
-setupTmux
 setupAntivirus
 setupFirewalld
 setupDevMon
