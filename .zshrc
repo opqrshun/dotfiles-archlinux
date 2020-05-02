@@ -17,8 +17,9 @@ prompt pure
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/z/z.sh
+
 # Aliases
-alias mirrorUpdate='sudo reflector --latest 250 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias sortmirror='sudo reflector --latest 200 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
@@ -26,7 +27,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias ip='ip -c'
 alias rm='rm -i'
-alias x='ranger'
+alias f='ranger'
 alias c='cmus'
 alias h='htop'
 alias vi='nvim'

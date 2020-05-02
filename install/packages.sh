@@ -65,7 +65,7 @@ BASE_PACKAGES=(
     'openvpn'
     'openssh'
     'pacman-contrib'
-    'poppler'
+    'poppler' #pdf
     'ranger'
     'ripgrep' # recursively searches directorys
     'tmux'
@@ -145,6 +145,7 @@ AUR_PACKAGES=(
     'lazydocker'
     'nerd-fonts-source-code-pro'
     'siji-git'
+    'procs'
     # 'uzbl-tabbed'
     
     'ibus-mozc'
