@@ -17,7 +17,7 @@ function setupPython() {
 
 #!/usr/bin/env bash
 function setupPHP() {
-	composer require --dev vimeo/psalm
+	composer global require vimeo/psalm
 }
 function setupGo() {
 	pacman -Syu go go-pie go-tools --noconfirm
