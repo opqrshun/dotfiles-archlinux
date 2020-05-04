@@ -53,6 +53,7 @@ BASE_PACKAGES=(
     'fd' #find
     'fuse2'
     'fzf'
+    'fdupes' #seach duplicate files
     'git'
     'highlight'
     'htop'
@@ -217,7 +218,7 @@ if [ "$typeVal" != 'cli' ] && [ "$typeVal" != 'gui' ]; then
 fi
 
 if [ "$typeVal" == 'gui' ]; then
-    AUR_PACKAGES+=('bibata-cursor-theme')
+    AUR_PACKAGES+=('rednotebook')
 fi
 
 if [ "$(uname -m)" == 'x86_64' ]; then
