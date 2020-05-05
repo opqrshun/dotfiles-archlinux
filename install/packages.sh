@@ -40,7 +40,6 @@ if [ $OPTIND -eq 1 ]; then
 fi
 
 BASE_PACKAGES=(
-    'acpi'
     'atool'
     'bat'
     'blueman'
@@ -60,10 +59,8 @@ BASE_PACKAGES=(
     'jq'
     'less'
     'lsd'
-    'mediainfo'
     'neofetch'
     'odt2txt'
-    'openvpn'
     'openssh'
     'pacman-contrib'
     'poppler' #pdf
@@ -72,14 +69,12 @@ BASE_PACKAGES=(
     'tmux'
     'tig' #git
     'tldr' #man usage comunity
-    # 'usbguard'
-    # 'weechat'
+    'wget'
     'whois'
     'xterm'
     'z'
     'zsh'
 
-    'wget'
     'neovim'
     'bind-tools'
     'nmap'
@@ -95,6 +90,8 @@ BASE_PACKAGES=(
     'r'
     'ruby'
     'lua'
+
+    'openvpn'
 
     'mariadb'
     'mysql-python'
@@ -127,7 +124,7 @@ GUI_PACKAGES=(
     # 'firefox'
     'light'
     'npm'
-    'papirus-icon-theme'
+    # 'papirus-icon-theme'
     'vinagre' #vnc
     'imwheel'
     'keepassxc'
@@ -136,6 +133,7 @@ GUI_PACKAGES=(
     'libreoffice-fresh'
     'pinta'
     'meld'
+    'mediainfo'
     'zeal' # lang reference
 )
 
@@ -145,7 +143,6 @@ AUR_PACKAGES=(
     'lazygit'
     'lazydocker'
     'nerd-fonts-source-code-pro'
-    'siji-git'
     'procs'
     # 'uzbl-tabbed'
     
@@ -156,7 +153,6 @@ AUR_PACKAGES=(
     'ttf-ricty'
     'nkf'
     'noti' # monitor a process and trigger a notification
-    'postman'
     # 'haskell-ide-engine'
     'visual-studio-code-bin'
     'google-chrome'
