@@ -34,7 +34,8 @@ VSCODE_PKG_LIST=(
   mauve.terraform,
   amazonwebservices.aws-toolkit-vscode,
   joelday.docthis,
-  vscodevim.vim
+  vscodevim.vim,
+  bbenoist.nix
 )
 
 for i in "${VSCODE_PKG_LIST[@]}"; do
