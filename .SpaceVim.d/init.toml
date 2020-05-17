@@ -76,6 +76,8 @@ name = "lang#php"
 
 [[layers]]
   name = "lang#python"
+  format_on_save = 1
+  enable_typeinfo = true
 
 [[layers]]
   name = "lang#haskell"
