@@ -47,6 +47,7 @@ BASE_PACKAGES=(
     'cmus'
     'curl'
     'dhcpcd'
+    'exa'
     # 'ffmpegthumbnailer'
     'firewalld'
     'fd' #find
@@ -58,7 +59,6 @@ BASE_PACKAGES=(
     'htop'
     'jq'
     'less'
-    'lsd'
     'neofetch'
     'odt2txt'
     'openssh'
@@ -72,7 +72,6 @@ BASE_PACKAGES=(
     'wget'
     'whois'
     'xterm'
-    'z'
     'zsh'
 
     'neovim'
@@ -142,7 +141,7 @@ AUR_PACKAGES=(
     # 'gotop'
     'lazygit'
     'lazydocker'
-    'nerd-fonts-source-code-pro'
+    # 'nerd-fonts-source-code-pro'
     'procs'
     # 'uzbl-tabbed'
     

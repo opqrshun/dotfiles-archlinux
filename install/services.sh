@@ -12,7 +12,7 @@ function setupNode() {
 function setupPython() {
   python -m venv ${HOME}/venv/pydev
 
-	pip install --user -r requirements-dev.txt
+	pip install --user -r requirements-user.txt
 
   ${HOME}/venv/pydev/bin/pip install --user --upgrade pip
 	${HOME}/venv/pydev/bin/pip install -r requirements.txt
