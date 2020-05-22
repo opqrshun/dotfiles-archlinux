@@ -23,7 +23,7 @@ function setupPHP() {
 	composer global require vimeo/psalm
 }
 function setupGo() {
-	pacman -Syu go go-pie go-tools --noconfirm
+	pacman -Syu go go-tools --noconfirm
 }
 
 function setupDocker() {
@@ -53,7 +53,7 @@ function setupAnsible() {
 # }
 
 function setupAntivirus() {
-  pacman -Syu clamav clamtk --noconfirm
+  pacman -Syu clamav --noconfirm
 	freshclam
 	systemctl enable clamav-daemon.service
 	systemctl start clamav-daemon.service

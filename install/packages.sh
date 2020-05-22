@@ -88,7 +88,7 @@ BASE_PACKAGES=(
     'rust'
     'r'
     'ruby'
-    'lua'
+    # 'lua'
 
     'openvpn'
 
@@ -137,7 +137,7 @@ GUI_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    'conky-lua' # https://wiki.archlinux.jp/index.php/Conky
+    # 'conky-lua' # https://wiki.archlinux.jp/index.php/Conky
     # 'gotop'
     'lazygit'
     'lazydocker'
