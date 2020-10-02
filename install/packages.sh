@@ -46,6 +46,7 @@ BASE_PACKAGES=(
     'bluez-utils'
     'cmus'
     'curl'
+    'convmv'
     'dhcpcd'
     'exa'
     # 'ffmpegthumbnailer'
@@ -100,6 +101,7 @@ BASE_PACKAGES=(
     'hub' #github cli
     'shellcheck'
     'sshpass'
+    'encfs'
 	'doxygen'
     'graphviz'
     'ansible'

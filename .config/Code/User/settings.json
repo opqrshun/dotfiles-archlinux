@@ -18,5 +18,8 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "vim.easymotion": true,
     "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/bin/nvim"
+    "vim.neovimPath": "/usr/bin/nvim",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
