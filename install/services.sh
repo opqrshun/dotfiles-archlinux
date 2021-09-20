@@ -23,7 +23,7 @@ function setupPHP() {
 	composer global require vimeo/psalm
 }
 function setupGo() {
-	pacman -Syu go go-tools --noconfirm
+	pacman -Syu go --noconfirm
 }
 
 function setupDocker() {
@@ -133,13 +133,14 @@ function setupFirewalld() {
 # }
 
 
-setupNode
-setupPHP
-setupGo
-setupDocker
-setupAnsible
-setupAntivirus
-setupFirewalld
-setupDevMon
+# setupNode
+# setupPHP
+# setupGo
+# setupDocker
+# setupAnsible
+# setupAntivirus
+# setupFirewalld
+# setupDevMon
+setupPython
 
 # setupTlp
