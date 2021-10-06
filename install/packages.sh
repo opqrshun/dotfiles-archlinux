@@ -74,6 +74,7 @@ BASE_PACKAGES=(
     'whois'
     'xterm'
     'zsh'
+    'man'
 
     'neovim'
     'bind-tools'
@@ -89,6 +90,7 @@ BASE_PACKAGES=(
     'rust'
     'r'
     'ruby'
+    'deno'
     # 'lua'
 
     'openvpn'
@@ -135,7 +137,7 @@ GUI_PACKAGES=(
     'pinta'
     'meld'
     'mediainfo'
-    'zeal' # lang reference
+    #'zeal' # lang reference
 )
 
 AUR_PACKAGES=(
@@ -241,7 +243,7 @@ if [ -n "$gnomeFlag" ]; then
         'gnome-shell-extension-system-monitor-git'
         'chrome-gnome-shell-git'
                     'nautilus-dropbox'
-                    'slack-desktop'
+                    # 'slack-desktop'
                     'copyq')
 fi
 
