@@ -1,13 +1,12 @@
 {
-    "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
-    "editor.tabSize": 2,
+    "editor.tabSize": 8,
     "editor.tabCompletion": "on",
     "prettier.singleQuote": true,
     "phpcs.composerJsonPath": "/home/taki/.config/composer",
     "python.pythonPath": "/home/taki/venv/pydev/bin/python",
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[php]": {
         "editor.defaultFormatter": "kokororin.vscode-phpfmt"
@@ -21,5 +20,64 @@
     "vim.neovimPath": "/usr/bin/nvim",
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "on",
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        }
+    ],
+    "python.defaultInterpreterPath": "/home/taki/venv/pydev",
+    "workbench.sideBar.location": "right",
+    "go.toolsManagement.autoUpdate": true,
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "solidity.telemetry": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "window.menuBarVisibility": "visible",
+    "[sql]": {
+        "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    },
+    "genieai.enableConversationHistory": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "[typescript][typescriptreact]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "update.showReleaseNotes": false,
+    "javascript.referencesCodeLens.enabled": true
+
 }

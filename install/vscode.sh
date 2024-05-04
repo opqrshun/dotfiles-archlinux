@@ -37,7 +37,8 @@ VSCODE_PKG_LIST=(
   vscodevim.vim,
   bbenoist.nix,
   hediet.vscode-drawio
-
+  ms-vscode-remote.remote-containers
+  dart-code.flutter
 )
 
 for i in "${VSCODE_PKG_LIST[@]}"; do
