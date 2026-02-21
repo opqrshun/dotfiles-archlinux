@@ -84,6 +84,16 @@ EOF
 }
 
 main() {
+  local base_packages=(
+    git base-devel curl wget unzip zip rsync
+    openssh ca-certificates
+  )
+  local dev_packages=(
+    zsh tmux neovim
+    ripgrep fd fzf bat less tree
+    htop which man-db man-pages
+  )
+
   is_arch || die "This script is for Arch Linux."
 
   require_cmd pacman
@@ -103,12 +113,12 @@ main() {
 
   # 2) Base tools
   log "Installing base tools"
-  pac_install git base-devel curl wget unzip zip rsync jq openssh ca-certificates
+  pac_install "${base_packages[@]}"
 
   # 3) Dev / CLI tools
   if [[ "${BOOTSTRAP_SKIP_DEVTOOLS:-0}" != "1" ]]; then
     log "Installing dev/cli tools"
-    pac_install neovim tmux htop btop ripgrep fd bat tree less which man-db man-pages
+    pac_install "${dev_packages[@]}"
     pac_install python python-pip
   else
     log "Skipping dev tools (BOOTSTRAP_SKIP_DEVTOOLS=1)"
