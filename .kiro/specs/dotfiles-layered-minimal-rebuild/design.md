@@ -16,7 +16,7 @@
   - 必須 CLI のみ導入（過剰依存を避ける）
   - `dotfiles-old` 由来パッケージの採用先
 - Layer2 owns:
-  - `layer2/install.sh` (external `dotfiles-shell` を clone/update して実行)
+  - external `dotfiles-shell` の手動 clone + `install.sh` 実行手順（README 管理）
 
 ## Minimal Shell Design
 - zsh は「起動に必須な設定」だけを初期搭載する
@@ -31,7 +31,7 @@
 ## Migration Strategy (Reset)
 1. `dotfiles-shell/` の shell/tmux を棚卸しし `keep / drop / defer` 判定
 2. `dotfiles-old/` は不足部分の補助参照のみ
-3. Layer2 は external `dotfiles-shell` 実行方式へ切り替え
+3. Layer2 は external `dotfiles-shell` 手動実行方式へ切り替え（この repo で実行スクリプトを持たない）
 4. README に Layer1/Layer2 の責務境界を反映
 
 ## Package Selection Strategy

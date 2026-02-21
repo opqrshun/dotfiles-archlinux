@@ -22,16 +22,16 @@ BOOTSTRAP_INSTALL_AUR_ALL=1 \
 bash <(curl -fsSL https://raw.githubusercontent.com/opqrshun/dotfiles-archlinux-2/dev/bootstrap.sh)
 ```
 
-layer2
+layer2 (manual)
 
+```bash
+rm -f ~/.dotfiles-shell
+git clone https://github.com/opqrshun/dotfiles-shell.git ~/.dotfiles-shell
+bash ~/.dotfiles-shell/install.sh
 ```
-./layer2/install.sh
+
+Check `.zshrc` link target:
+
+```bash
+readlink ~/.zshrc
 ```
-
-Layer2 clones/updates and runs:
-- `https://github.com/opqrshun/dotfiles-shell.git` (`install.sh`)
-
-Override source with env vars:
-- `LAYER2_SHELL_REPO_URL`
-- `LAYER2_SHELL_REPO_DIR` (default: `$HOME/.dotfiles-shell`)
-- `LAYER2_SHELL_REPO_REF` (default: `master`)

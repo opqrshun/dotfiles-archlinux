@@ -7,7 +7,7 @@
 - [x] Layer1/Layer2 へ再割り当てする
 
 ## Phase 2: Rebuild minimal Layer2
-- [x] `layer2/install.sh` を external `dotfiles-shell` 実行方式に切り替える
+- [x] Layer2 は `dotfiles-shell` の手動 clone + `install.sh` 実行に統一する
 - [x] Layer2 のローカル `home` 管理を廃止する
 
 ## Phase 3: Align Layer1
