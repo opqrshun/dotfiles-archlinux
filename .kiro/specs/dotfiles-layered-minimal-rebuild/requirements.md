@@ -23,7 +23,7 @@
 ## Functional Requirements
 1. 観測対象を `dotfiles-shell/` (主) と `dotfiles-old/` (補助) に再定義する。
 2. `keep / drop / defer` 判定表を再作成する。
-3. Layer2 は外部 `dotfiles-shell` リポジトリを手動実行する方式を採用し、このリポジトリ内で Layer2 実行スクリプトは管理しない。
+3. Layer2 は外部 `dotfiles-shell` リポジトリを実行する方式を採用し、`layer2/install.sh` から clone/update と実行を管理する。
 4. Prezto/TPM など外部依存は optional 化し、最小起動を阻害しない設計にする。
 5. Layer1 は bootstrap と最小パッケージ導入のみを扱う。
 6. 旧不要要素はデフォルトで除外し、必要なら後段で opt-in 追加する。
