@@ -3,24 +3,16 @@ set -euo pipefail
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 src_hotkey="$script_dir/fcitx5/hotkey.conf"
-src_profile="$script_dir/fcitx5/profile"
 dst_dir="$HOME/.config/fcitx5/conf"
 dst_hotkey="$dst_dir/hotkey.conf"
-dst_profile="$HOME/.config/fcitx5/profile"
 
 command -v gsettings >/dev/null 2>&1 || {
   echo "[ERROR] gsettings not found." >&2
   exit 1
 }
 
-if [[ ! -f /usr/share/fcitx5/inputmethod/mozc.conf ]]; then
-  echo "[ERROR] Mozc not installed. Install package: fcitx5-mozc" >&2
-  exit 1
-fi
-
 mkdir -p "$dst_dir"
 install -m 0644 "$src_hotkey" "$dst_hotkey"
-install -m 0644 "$src_profile" "$dst_profile"
 
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "[]"

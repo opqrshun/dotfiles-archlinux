@@ -29,21 +29,20 @@ layer2
 ./layer2/install.sh
 ```
 
-日本語入力切替 (GNOME + fcitx5 + mozc)
+日本語入力切替 (GNOME + fcitx5)
 
 ```bash
 ./layer2/gnome.sh
 ```
 
 `layer2/gnome.sh` is the entrypoint and calls `layer2/apply-input.sh`.
-It deploys `~/.config/fcitx5/conf/hotkey.conf` and `~/.config/fcitx5/profile` (includes `mozc`).
+It deploys `~/.config/fcitx5/conf/hotkey.conf` and does not force current IM.
 
 検証:
 - `gsettings get org.gnome.desktop.wm.keybindings switch-input-source` が `[]`
 - `gsettings get org.gnome.desktop.input-sources xkb-options` に `ctrl:nocaps` が含まれる
 - `gsettings get org.gnome.desktop.interface color-scheme` が `'prefer-dark'`
 - `Ctrl+Space` で日本語/英語が切り替わる
-- `test -f /usr/share/fcitx5/inputmethod/mozc.conf` が成功する（`fcitx5-mozc` 導入済み）
 - 反映されない場合は `fcitx5-remote -r` または再ログイン
 - それでもダメな場合は `pgrep -ax fcitx5` で fcitx5 プロセスの起動有無を確認
 
