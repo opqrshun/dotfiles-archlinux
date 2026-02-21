@@ -96,7 +96,7 @@ main() {
     tmux neovim
     ripgrep fd fzf bat less tree eza
     htop which man-db man-pages
-    neofetch vim broot
+    macchina vim broot keepassxc
   )
   local shell_aur_packages=(
     lazygit lazydocker
