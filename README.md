@@ -43,6 +43,7 @@ It deploys `~/.config/fcitx5/conf/hotkey.conf` and `~/.config/fcitx5/profile` (i
 - `gsettings get org.gnome.desktop.input-sources xkb-options` に `ctrl:nocaps` が含まれる
 - `gsettings get org.gnome.desktop.interface color-scheme` が `'prefer-dark'`
 - `Ctrl+Space` で日本語/英語が切り替わる
+- `test -f /usr/share/fcitx5/inputmethod/mozc.conf` が成功する（`fcitx5-mozc` 導入済み）
 - 反映されない場合は `fcitx5-remote -r` または再ログイン
 - それでもダメな場合は `pgrep -ax fcitx5` で fcitx5 プロセスの起動有無を確認
 

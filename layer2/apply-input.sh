@@ -13,6 +13,11 @@ command -v gsettings >/dev/null 2>&1 || {
   exit 1
 }
 
+if [[ ! -f /usr/share/fcitx5/inputmethod/mozc.conf ]]; then
+  echo "[ERROR] Mozc not installed. Install package: fcitx5-mozc" >&2
+  exit 1
+fi
+
 mkdir -p "$dst_dir"
 install -m 0644 "$src_hotkey" "$dst_hotkey"
 install -m 0644 "$src_profile" "$dst_profile"

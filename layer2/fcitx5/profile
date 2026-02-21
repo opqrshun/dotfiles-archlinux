@@ -4,7 +4,7 @@
 [Groups/0]
 Name=Default
 Default Layout=us
-DefaultIM=keyboard-us
+DefaultIM=mozc
 
 [Groups/0/Items/0]
 Name=keyboard-us
@@ -13,3 +13,6 @@ Layout=
 [Groups/0/Items/1]
 Name=mozc
 Layout=
+
+[Profile]
+EnabledIMList=keyboard-us,mozc
