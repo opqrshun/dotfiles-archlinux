@@ -25,3 +25,4 @@ Layer2 installs minimal shell-first dotfiles:
 - `~/.zprofile`
 - `~/.zshrc`
 - `~/.tmux.conf`
+- On Arch Linux, it also attempts to set your default login shell to `zsh`.

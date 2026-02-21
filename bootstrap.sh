@@ -85,11 +85,11 @@ EOF
 
 main() {
   local base_packages=(
-    git base-devel curl wget unzip zip rsync
+    git base-devel curl wget unzip zip rsync zsh
     openssh ca-certificates
   )
   local dev_packages=(
-    zsh tmux neovim
+    tmux neovim
     ripgrep fd fzf bat less tree
     htop which man-db man-pages
   )
