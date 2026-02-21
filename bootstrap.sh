@@ -96,6 +96,7 @@ main() {
     ripgrep fd fzf bat less tree eza
     htop which man-db man-pages
     macchina vim broot keepassxc lazygit
+    gnome-shell-extensions gnome-tweaks
   )
   is_arch || die "This script is for Arch Linux."
 
