@@ -33,5 +33,5 @@ Layer2 clones/updates and runs:
 
 Override source with env vars:
 - `LAYER2_SHELL_REPO_URL`
-- `LAYER2_SHELL_REPO_DIR`
+- `LAYER2_SHELL_REPO_DIR` (default: `$HOME/.dotfiles-shell`)
 - `LAYER2_SHELL_REPO_REF` (default: `master`)
