@@ -9,5 +9,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/opqrshun/dotfiles-archlinux-
 
 ```
 BOOTSTRAP_INSTALL_YAY=1 \
+BOOTSTRAP_INSTALL_CHROME=1 \
+BOOTSTRAP_INSTALL_VSCODE=1 \
 bash <(curl -fsSL https://raw.githubusercontent.com/opqrshun/dotfiles-archlinux-2/dev/bootstrap.sh)
 ```
