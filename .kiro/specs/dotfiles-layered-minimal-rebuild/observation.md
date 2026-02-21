@@ -18,7 +18,6 @@
 | `dotfiles-shell/install/setupShell.sh` | zsh/tmux installer | defer | Layer2 optional | `yarn` や外部 clone 前提で重い |
 | `dotfiles-shell/install/setupVim.sh` | SpaceVim installer | drop | N/A | 最小 shell-first 方針から外れる |
 | `dotfiles-shell/.SpaceVim.d/*` | editor config | drop | N/A | 初期スコープ外 |
-| `dotfiles-shell/.config/ranger/*` | ranger config | defer | Layer2 optional | 必須ではないが後で追加可能 |
 | `dotfiles-shell/.config/bat/config` | bat config | defer | Layer2 optional | 任意設定として分離可能 |
 | `dotfiles-old/install-system.sh` | system entrypoint | keep | Layer1 | system側責務の分離方針に沿う |
 | `dotfiles-old/install/packages.sh` | large package installer | drop | N/A | 過剰。最小方針に反する |
@@ -34,7 +33,7 @@
   - 安全なリンク反映スクリプト
 - Optional bucket (later)
   - prezto 拡張
-  - ranger/bat/vscode などアプリ個別設定
+  - bat/vscode などアプリ個別設定
 
 ## Package Selection Snapshot (from `dotfiles-old/install/packages.sh`)
 - keep (Layer1):
@@ -42,7 +41,7 @@
   - `ripgrep`, `fd`, `fzf`, `bat`, `less`
   - `neovim`, `htop`, `tree`, `openssh`, `man-db`, `man-pages`
 - defer:
-  - `ranger`, `tig`, `tldr`, `jq`, `bind-tools`, `nmap`
+  - `tig`, `tldr`, `jq`, `bind-tools`, `nmap`
 - drop:
   - GUI群 (`alacritty`, `libreoffice-fresh`, `filezilla`, `zoom` など)
   - 言語ランタイム大量導入 (`php`, `ruby`, `r`, `deno` など)

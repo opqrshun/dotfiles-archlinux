@@ -17,7 +17,6 @@ set -euo pipefail
 #   BOOTSTRAP_INSTALL_AUR_ALL=1      # install all configured AUR packages
 #   BOOTSTRAP_INSTALL_CHROME=1       # install google-chrome (AUR) via yay
 #   BOOTSTRAP_INSTALL_VSCODE=1       # install visual-studio-code-bin (AUR) via yay
-#   BOOTSTRAP_INSTALL_SHELL_AUR=1    # install shell AUR tools (lazygit/lazydocker)
 #   BOOTSTRAP_SKIP_IME=1             # skip fcitx5/mozc setup
 #   BOOTSTRAP_SKIP_FONTS=1           # skip fonts
 #   BOOTSTRAP_SKIP_DEVTOOLS=1        # skip dev tools
@@ -96,12 +95,8 @@ main() {
     tmux neovim
     ripgrep fd fzf bat less tree eza
     htop which man-db man-pages
-    macchina vim broot keepassxc
+    macchina vim broot keepassxc lazygit
   )
-  local shell_aur_packages=(
-    lazygit lazydocker
-  )
-
   is_arch || die "This script is for Arch Linux."
 
   require_cmd pacman
@@ -151,7 +146,7 @@ main() {
   fi
 
   # 6) Optional: yay + AUR apps
-  if [[ "${BOOTSTRAP_INSTALL_YAY:-0}" == "1" || "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_CHROME:-0}" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" || "${BOOTSTRAP_INSTALL_SHELL_AUR:-0}" == "1" ]]; then
+  if [[ "${BOOTSTRAP_INSTALL_YAY:-0}" == "1" || "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_CHROME:-0}" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" ]]; then
     log "AUR path requested: installing yay"
     install_yay
   fi
@@ -164,11 +159,6 @@ main() {
   if [[ "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" ]]; then
     log "Installing VS Code (AUR) via yay"
     yay -S --needed --noconfirm visual-studio-code-bin
-  fi
-
-  if [[ "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_SHELL_AUR:-0}" == "1" ]]; then
-    log "Installing shell AUR tools via yay: ${shell_aur_packages[*]}"
-    yay -S --needed --noconfirm "${shell_aur_packages[@]}"
   fi
 
   log "Layer1 bootstrap finished."

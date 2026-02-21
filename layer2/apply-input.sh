@@ -19,8 +19,20 @@ gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "[]"
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+if ! pgrep -x fcitx5 >/dev/null 2>&1; then
+  nohup fcitx5 -d >/dev/null 2>&1 &
+  sleep 1
+fi
+
 if command -v fcitx5-remote >/dev/null 2>&1; then
   fcitx5-remote -r || true
 else
   echo "[WARN] fcitx5-remote not found. Re-login to apply fcitx5 changes." >&2
+fi
+
+echo "[INFO] fcitx5 status check:"
+if command -v fcitx5-remote >/dev/null 2>&1; then
+  fcitx5-remote || true
+else
+  pgrep -ax fcitx5 || true
 fi

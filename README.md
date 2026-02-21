@@ -11,7 +11,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/opqrshun/dotfiles-archlinux-
 BOOTSTRAP_INSTALL_YAY=1 \
 BOOTSTRAP_INSTALL_CHROME=1 \
 BOOTSTRAP_INSTALL_VSCODE=1 \
-BOOTSTRAP_INSTALL_SHELL_AUR=1 \
 bash <(curl -fsSL https://raw.githubusercontent.com/opqrshun/dotfiles-archlinux-2/dev/bootstrap.sh)
 ```
 
@@ -22,6 +21,8 @@ BOOTSTRAP_INSTALL_AUR_ALL=1 \
 bash <(curl -fsSL https://raw.githubusercontent.com/opqrshun/dotfiles-archlinux-2/dev/bootstrap.sh)
 ```
 
+`lazygit` is included in default dev packages.
+
 layer2
 
 ```bash
@@ -31,8 +32,10 @@ layer2
 日本語入力切替 (GNOME + fcitx5 + mozc)
 
 ```bash
-./layer2/apply-input.sh
+./layer2/gnome.sh
 ```
+
+`layer2/gnome.sh` is the entrypoint and calls `layer2/apply-input.sh`.
 
 検証:
 - `gsettings get org.gnome.desktop.wm.keybindings switch-input-source` が `[]`
@@ -40,6 +43,7 @@ layer2
 - `gsettings get org.gnome.desktop.interface color-scheme` が `'prefer-dark'`
 - `Ctrl+Space` で日本語/英語が切り替わる
 - 反映されない場合は `fcitx5-remote -r` または再ログイン
+- それでもダメな場合は `pgrep -ax fcitx5` で fcitx5 プロセスの起動有無を確認
 
 Check `.zshrc` link target:
 
