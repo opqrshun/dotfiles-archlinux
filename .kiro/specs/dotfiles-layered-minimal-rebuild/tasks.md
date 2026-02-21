@@ -1,17 +1,14 @@
 # Tasks
 
 ## Phase 1: Re-observe legacy sources
-- [x] `dotfiles-shell-old/` のファイルをカテゴリ分けする（主ソース）
+- [x] `dotfiles-shell/` のファイルをカテゴリ分けする（主ソース）
 - [x] `dotfiles-old/` の補助参照ポイントを抽出する（補助ソース）
 - [x] `keep / drop / defer` 判定表を再作成する
 - [x] Layer1/Layer2 へ再割り当てする
 
 ## Phase 2: Rebuild minimal Layer2
-- [x] `layer2/home/.zshenv` の最小版を作成する
-- [x] `layer2/home/.zprofile` の最小版を作成する
-- [x] `layer2/home/.zshrc` の最小版を作成する
-- [x] `layer2/home/.tmux.conf` の最小版を作成する
-- [x] 不要な alias/plugin/options を除外する
+- [x] `layer2/install.sh` を external `dotfiles-shell` 実行方式に切り替える
+- [x] Layer2 のローカル `home` 管理を廃止する
 
 ## Phase 3: Align Layer1
 - [x] Layer1 からユーザー設定責務を除外する

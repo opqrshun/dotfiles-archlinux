@@ -14,8 +14,10 @@ set -euo pipefail
 #
 # Optional env flags:
 #   BOOTSTRAP_INSTALL_YAY=1          # build yay from AUR
+#   BOOTSTRAP_INSTALL_AUR_ALL=1      # install all configured AUR packages
 #   BOOTSTRAP_INSTALL_CHROME=1       # install google-chrome (AUR) via yay
 #   BOOTSTRAP_INSTALL_VSCODE=1       # install visual-studio-code-bin (AUR) via yay
+#   BOOTSTRAP_INSTALL_SHELL_AUR=1    # install shell AUR tools (lazygit/lazydocker)
 #   BOOTSTRAP_SKIP_IME=1             # skip fcitx5/mozc setup
 #   BOOTSTRAP_SKIP_FONTS=1           # skip fonts
 #   BOOTSTRAP_SKIP_DEVTOOLS=1        # skip dev tools
@@ -84,14 +86,20 @@ EOF
 }
 
 main() {
+  local aur_all
+  aur_all="${BOOTSTRAP_INSTALL_AUR_ALL:-0}"
   local base_packages=(
     git base-devel curl wget unzip zip rsync zsh
     openssh ca-certificates
   )
   local dev_packages=(
     tmux neovim
-    ripgrep fd fzf bat less tree
+    ripgrep fd fzf bat less tree eza
     htop which man-db man-pages
+    neofetch vim broot
+  )
+  local shell_aur_packages=(
+    lazygit lazydocker
   )
 
   is_arch || die "This script is for Arch Linux."
@@ -143,19 +151,24 @@ main() {
   fi
 
   # 6) Optional: yay + AUR apps
-  if [[ "${BOOTSTRAP_INSTALL_YAY:-0}" == "1" || "${BOOTSTRAP_INSTALL_CHROME:-0}" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" ]]; then
+  if [[ "${BOOTSTRAP_INSTALL_YAY:-0}" == "1" || "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_CHROME:-0}" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" || "${BOOTSTRAP_INSTALL_SHELL_AUR:-0}" == "1" ]]; then
     log "AUR path requested: installing yay"
     install_yay
   fi
 
-  if [[ "${BOOTSTRAP_INSTALL_CHROME:-0}" == "1" ]]; then
+  if [[ "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_CHROME:-0}" == "1" ]]; then
     log "Installing google-chrome (AUR) via yay"
     yay -S --needed --noconfirm google-chrome
   fi
 
-  if [[ "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" ]]; then
+  if [[ "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" ]]; then
     log "Installing VS Code (AUR) via yay"
     yay -S --needed --noconfirm visual-studio-code-bin
+  fi
+
+  if [[ "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_SHELL_AUR:-0}" == "1" ]]; then
+    log "Installing shell AUR tools via yay: ${shell_aur_packages[*]}"
+    yay -S --needed --noconfirm "${shell_aur_packages[@]}"
   fi
 
   log "Layer1 bootstrap finished."

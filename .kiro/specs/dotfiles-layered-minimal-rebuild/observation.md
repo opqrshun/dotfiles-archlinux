@@ -1,7 +1,7 @@
 # Observation (Reset)
 
 ## Scope
-- Primary source: `dotfiles-shell-old/`
+- Primary source: `dotfiles-shell/`
 - Secondary source: `dotfiles-old/`
 - Goal: shell 共通化の意図を活かしつつ、Layer1/Layer2 分離の最小構成へ再設計する
 
@@ -9,17 +9,17 @@
 
 | Source | Category | Decision | Target | Reason |
 |---|---|---|---|---|
-| `dotfiles-shell-old/.zshrc` | zsh interactive core | keep | Layer2 | 中核。依存強い部分だけ削って再構築 |
-| `dotfiles-shell-old/.zshenv` | zsh env/path | keep | Layer2 | PATH管理を最小化して流用可能 |
-| `dotfiles-shell-old/.zprofile` | login env/editor | keep | Layer2 | editor/lang/less設定の骨格として有用 |
-| `dotfiles-shell-old/.zpreztorc` | prezto module selection | defer | Layer2 optional | prezto 前提が強いため optional 化 |
-| `dotfiles-shell-old/.tmux.conf` | tmux core config | keep | Layer2 | pane移動等は有用。xsel/cpu plugin は削減対象 |
-| `dotfiles-shell-old/install/link.sh` | symlink deploy | keep | Layer2 tooling | 役割は妥当。安全化して再実装する |
-| `dotfiles-shell-old/install/setupShell.sh` | zsh/tmux installer | defer | Layer2 optional | `yarn` や外部 clone 前提で重い |
-| `dotfiles-shell-old/install/setupVim.sh` | SpaceVim installer | drop | N/A | 最小 shell-first 方針から外れる |
-| `dotfiles-shell-old/.SpaceVim.d/*` | editor config | drop | N/A | 初期スコープ外 |
-| `dotfiles-shell-old/.config/ranger/*` | ranger config | defer | Layer2 optional | 必須ではないが後で追加可能 |
-| `dotfiles-shell-old/.config/bat/config` | bat config | defer | Layer2 optional | 任意設定として分離可能 |
+| `dotfiles-shell/.zshrc` | zsh interactive core | keep | Layer2 | 中核。依存強い部分だけ削って再構築 |
+| `dotfiles-shell/.zshenv` | zsh env/path | keep | Layer2 | PATH管理を最小化して流用可能 |
+| `dotfiles-shell/.zprofile` | login env/editor | keep | Layer2 | editor/lang/less設定の骨格として有用 |
+| `dotfiles-shell/.zpreztorc` | prezto module selection | defer | Layer2 optional | prezto 前提が強いため optional 化 |
+| `dotfiles-shell/.tmux.conf` | tmux core config | keep | Layer2 | pane移動等は有用。xsel/cpu plugin は削減対象 |
+| `dotfiles-shell/install/link.sh` | symlink deploy | keep | Layer2 tooling | 役割は妥当。安全化して再実装する |
+| `dotfiles-shell/install/setupShell.sh` | zsh/tmux installer | defer | Layer2 optional | `yarn` や外部 clone 前提で重い |
+| `dotfiles-shell/install/setupVim.sh` | SpaceVim installer | drop | N/A | 最小 shell-first 方針から外れる |
+| `dotfiles-shell/.SpaceVim.d/*` | editor config | drop | N/A | 初期スコープ外 |
+| `dotfiles-shell/.config/ranger/*` | ranger config | defer | Layer2 optional | 必須ではないが後で追加可能 |
+| `dotfiles-shell/.config/bat/config` | bat config | defer | Layer2 optional | 任意設定として分離可能 |
 | `dotfiles-old/install-system.sh` | system entrypoint | keep | Layer1 | system側責務の分離方針に沿う |
 | `dotfiles-old/install/packages.sh` | large package installer | drop | N/A | 過剰。最小方針に反する |
 | `dotfiles-old/install/services.sh` | service/runtime setup | drop | N/A | dotfiles責務外 |
@@ -49,6 +49,6 @@
   - サービス/インフラ用途 (`mariadb`, `ansible`, `terraform`, `aws-cli` など)
 
 ## Notes for Next Step
-- `dotfiles-shell-old` の zsh から heavy dependency を外す
+- `dotfiles-shell` の zsh から heavy dependency を外す
 - tmux plugin は最小セットに絞る
 - install は clone 前提から「存在すれば使う」設計へ変更する
