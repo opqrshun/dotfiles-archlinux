@@ -36,6 +36,7 @@ layer2
 ```
 
 `layer2/gnome.sh` is the entrypoint and calls `layer2/apply-input.sh`.
+It deploys `~/.config/fcitx5/conf/hotkey.conf` and `~/.config/fcitx5/profile` (includes `mozc`).
 
 検証:
 - `gsettings get org.gnome.desktop.wm.keybindings switch-input-source` が `[]`
