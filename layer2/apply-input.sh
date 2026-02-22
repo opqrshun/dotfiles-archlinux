@@ -22,6 +22,8 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface text-scaling-factor "$text_scale"
 gsettings set org.gnome.desktop.interface monospace-font-name "$mono_font"
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 
 if ! pgrep -x fcitx5 >/dev/null 2>&1; then
   nohup fcitx5 -d >/dev/null 2>&1 &

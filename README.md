@@ -59,6 +59,8 @@ KDE 関連パッケージを削除:
 - `gsettings get org.gnome.desktop.interface color-scheme` が `'prefer-dark'`
 - `gsettings get org.gnome.desktop.interface text-scaling-factor` が `1.0`
 - `gsettings get org.gnome.desktop.interface monospace-font-name` が `'Noto Sans Mono CJK JP 12'`
+- `gsettings get org.gnome.desktop.peripherals.mouse natural-scroll` が `true`
+- `gsettings get org.gnome.desktop.peripherals.touchpad natural-scroll` が `true`
 - `~/.config/fcitx5/conf/hotkey.conf` が配置されている
 - `Ctrl+Space` で日本語/英語が切り替わる
 - 反映されない場合は `fcitx5-remote -r` または再ログイン
