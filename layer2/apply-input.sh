@@ -5,7 +5,7 @@ script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 src_hotkey="$script_dir/fcitx5/hotkey.conf"
 dst_dir="$HOME/.config/fcitx5/conf"
 dst_hotkey="$dst_dir/hotkey.conf"
-text_scale="${GNOME_TEXT_SCALE:-1.1}"
+text_scale="${GNOME_TEXT_SCALE:-1.0}"
 mono_font="${GNOME_MONO_FONT:-Noto Sans Mono CJK JP 12}"
 
 command -v gsettings >/dev/null 2>&1 || {

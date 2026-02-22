@@ -57,7 +57,7 @@ KDE 関連パッケージを削除:
 - `gsettings get org.gnome.desktop.wm.keybindings switch-input-source` が `[]`
 - `gsettings get org.gnome.desktop.input-sources xkb-options` に `ctrl:nocaps` が含まれる
 - `gsettings get org.gnome.desktop.interface color-scheme` が `'prefer-dark'`
-- `gsettings get org.gnome.desktop.interface text-scaling-factor` が `1.1`
+- `gsettings get org.gnome.desktop.interface text-scaling-factor` が `1.0`
 - `gsettings get org.gnome.desktop.interface monospace-font-name` が `'Noto Sans Mono CJK JP 12'`
 - `~/.config/fcitx5/conf/hotkey.conf` が配置されている
 - `Ctrl+Space` で日本語/英語が切り替わる
