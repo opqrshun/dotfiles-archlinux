@@ -2,10 +2,11 @@
 set -euo pipefail
 
 # ------------------------------------------------------------
-# Arch Linux Layer1 bootstrap (GNOME/Wayland friendly)
+# Arch Linux Layer1 bootstrap
 # - Updates system
 # - Installs base/dev tools
 # - Installs IME (fcitx5 + mozc) and basic fonts
+# - Optionally installs desktop packages (GNOME/KDE)
 # - Optionally installs yay (AUR helper)
 #
 # Usage:
@@ -17,6 +18,10 @@ set -euo pipefail
 #   BOOTSTRAP_INSTALL_AUR_ALL=1      # install all configured AUR packages
 #   BOOTSTRAP_INSTALL_CHROME=1       # install google-chrome (AUR) via yay
 #   BOOTSTRAP_INSTALL_VSCODE=1       # install visual-studio-code-bin (AUR) via yay
+#   BOOTSTRAP_INSTALL_GNOME=1        # install GNOME packages
+#   BOOTSTRAP_INSTALL_KDE=1          # install KDE Plasma packages
+#   BOOTSTRAP_ENABLE_GDM=1           # enable gdm.service (when GNOME is installed)
+#   BOOTSTRAP_ENABLE_SDDM=1          # enable sddm.service (when KDE is installed)
 #   BOOTSTRAP_SKIP_IME=1             # skip fcitx5/mozc setup
 #   BOOTSTRAP_SKIP_FONTS=1           # skip fonts
 #   BOOTSTRAP_SKIP_DEVTOOLS=1        # skip dev tools
@@ -87,6 +92,9 @@ EOF
 main() {
   local aur_all
   aur_all="${BOOTSTRAP_INSTALL_AUR_ALL:-0}"
+  local install_gnome install_kde
+  install_gnome="${BOOTSTRAP_INSTALL_GNOME:-0}"
+  install_kde="${BOOTSTRAP_INSTALL_KDE:-0}"
   local base_packages=(
     git base-devel curl wget unzip zip rsync zsh
     openssh ca-certificates
@@ -96,9 +104,15 @@ main() {
     ripgrep fd fzf bat less tree eza
     htop which man-db man-pages
     macchina vim broot keepassxc lazygit
-    gnome-shell-extensions gnome-tweaks
+  )
+  local gnome_packages=(
+    gnome-shell gnome-control-center gdm gnome-tweaks gnome-shell-extensions
+  )
+  local kde_packages=(
+    plasma-meta sddm kde-cli-tools
   )
   is_arch || die "This script is for Arch Linux."
+  [[ "$install_gnome" == "1" && "$install_kde" == "1" ]] && die "Choose one desktop: BOOTSTRAP_INSTALL_GNOME=1 or BOOTSTRAP_INSTALL_KDE=1"
 
   require_cmd pacman
   ensure_sudo
@@ -160,6 +174,25 @@ main() {
   if [[ "$aur_all" == "1" || "${BOOTSTRAP_INSTALL_VSCODE:-0}" == "1" ]]; then
     log "Installing VS Code (AUR) via yay"
     yay -S --needed --noconfirm visual-studio-code-bin
+  fi
+
+  # 7) Optional: desktop environment (explicit opt-in only)
+  if [[ "$install_gnome" == "1" ]]; then
+    log "Installing GNOME packages"
+    pac_install "${gnome_packages[@]}"
+    if [[ "${BOOTSTRAP_ENABLE_GDM:-0}" == "1" ]]; then
+      log "Enabling gdm.service"
+      sudo systemctl enable gdm.service
+    fi
+  fi
+
+  if [[ "$install_kde" == "1" ]]; then
+    log "Installing KDE Plasma packages"
+    pac_install "${kde_packages[@]}"
+    if [[ "${BOOTSTRAP_ENABLE_SDDM:-0}" == "1" ]]; then
+      log "Enabling sddm.service"
+      sudo systemctl enable sddm.service
+    fi
   fi
 
   log "Layer1 bootstrap finished."
