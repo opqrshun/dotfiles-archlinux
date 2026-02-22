@@ -45,6 +45,7 @@ GNOME 設定 (Caps/Ctrl 入れ替え + 日本語入力 + ダークモード)
 
 `layer2/gnome.sh` is the entrypoint and calls `layer2/apply-input.sh`.
 It deploys `~/.config/fcitx5/conf/hotkey.conf`, sets Caps Lock/Ctrl swap, and applies dark mode.
+You can override font size/style with `GNOME_TEXT_SCALE` and `GNOME_MONO_FONT`.
 
 KDE 関連パッケージを削除:
 
@@ -57,6 +58,7 @@ KDE 関連パッケージを削除:
 - `gsettings get org.gnome.desktop.input-sources xkb-options` に `ctrl:nocaps` が含まれる
 - `gsettings get org.gnome.desktop.interface color-scheme` が `'prefer-dark'`
 - `gsettings get org.gnome.desktop.interface text-scaling-factor` が `1.1`
+- `gsettings get org.gnome.desktop.interface monospace-font-name` が `'Noto Sans Mono CJK JP 12'`
 - `~/.config/fcitx5/conf/hotkey.conf` が配置されている
 - `Ctrl+Space` で日本語/英語が切り替わる
 - 反映されない場合は `fcitx5-remote -r` または再ログイン

@@ -6,6 +6,7 @@ src_hotkey="$script_dir/fcitx5/hotkey.conf"
 dst_dir="$HOME/.config/fcitx5/conf"
 dst_hotkey="$dst_dir/hotkey.conf"
 text_scale="${GNOME_TEXT_SCALE:-1.1}"
+mono_font="${GNOME_MONO_FONT:-Noto Sans Mono CJK JP 12}"
 
 command -v gsettings >/dev/null 2>&1 || {
   echo "[ERROR] gsettings not found." >&2
@@ -20,6 +21,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "[]"
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface text-scaling-factor "$text_scale"
+gsettings set org.gnome.desktop.interface monospace-font-name "$mono_font"
 
 if ! pgrep -x fcitx5 >/dev/null 2>&1; then
   nohup fcitx5 -d >/dev/null 2>&1 &
