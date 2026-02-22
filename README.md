@@ -46,6 +46,12 @@ KDE 設定 (Caps/Ctrl 入れ替え + 日本語入力 + ダークモード)
 `layer2/kde.sh` is the entrypoint and calls `layer2/apply-kde.sh`.
 It deploys `~/.config/fcitx5/conf/hotkey.conf`, sets Caps Lock/Ctrl swap, and applies BreezeDark.
 
+GNOME 関連パッケージを削除:
+
+```bash
+./layer2/remove-gnome.sh
+```
+
 検証:
 - `kreadconfig6 --file kxkbrc --group Layout --key Options` が `ctrl:swapcaps`
 - `kreadconfig6 --file kdeglobals --group General --key ColorScheme` が `BreezeDark`
